@@ -1,0 +1,792 @@
+/*
+ * Gedeon Sports — inner pages. Measurements from the "… / Desktop / Working" (1920),
+ * "… / Tablet / Working" (768) and "… / Mobile / Working" (390) frames.
+ */
+
+.gs-section--flush {
+	border-top: 0;
+}
+
+/* ---------------------------------------------------------------------------
+ * Page Hero / Mark — copy beside the faded mark on a red glow (585 tall on Our Athletes).
+ * ------------------------------------------------------------------------ */
+
+.gs-hero-mark {
+	position: relative;
+	overflow: hidden;
+	padding: 133px 0 112px;
+	background: var(--gs-page);
+}
+
+.gs-hero-mark::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: 0;
+	width: 1000px;
+	height: 600px;
+	transform: translateY(-50%);
+	background: radial-gradient(50% 50% at 50% 50%, rgba(115, 10, 20, 0.55) 0%, rgba(115, 10, 20, 0) 100%);
+	pointer-events: none;
+}
+
+.gs-hero-mark > .gs-container {
+	position: relative;
+	display: flex;
+	align-items: flex-start;
+}
+
+.gs-hero-mark .gs-hero-mark__copy {
+	flex: 1 1 0;
+	min-width: 0;
+}
+
+.gs-hero-mark .gs-hero-mark__title {
+	margin-top: 22px;
+	font-size: 70.3px;
+	line-height: 70px;
+	color: var(--gs-text);
+}
+
+.gs-hero-mark .gs-hero-mark__text {
+	max-width: 640px;
+	margin-top: 24px;
+	font-size: 21px;
+	line-height: 34px;
+	color: var(--gs-body);
+}
+
+.gs-hero-mark .gs-hero-mark__aside {
+	display: flex;
+	flex: 0 0 590px;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 40px;
+	padding-top: 63px;
+}
+
+.gs-hero-mark .gs-hero-mark__logo img {
+	width: 380px;
+	height: auto;
+}
+
+/* ---------------------------------------------------------------------------
+ * Our Athletes — Portfolio: stage board, filters and athlete cards.
+ * ------------------------------------------------------------------------ */
+
+.gs-portfolio.gs-section {
+	padding: 72px 0 120px;
+}
+
+.gs-portfolio .gs-heading + .gs-stages {
+	margin-top: 56px;
+}
+
+.gs-stages {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 12px;
+}
+
+.gs-stage {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 16px 19px 28px;
+	border: 1px solid var(--gs-border);
+	border-radius: 8px;
+	background: var(--gs-raised);
+}
+
+.gs-stage .gs-stage__label {
+	font-family: var(--gs-heading-font);
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 16px;
+	letter-spacing: 3.25px;
+	text-transform: uppercase;
+	color: var(--gs-body);
+}
+
+.gs-stage .gs-stage__open {
+	padding: 11px 14px;
+	border: 1px dashed var(--gs-white-20);
+	border-radius: 4px;
+	font-size: 15.2px;
+	line-height: 23px;
+	color: var(--gs-muted);
+}
+
+.gs-stage .gs-stage__athlete {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	padding: 11px 14px;
+	border-left: 3px solid var(--gs-red);
+	border-radius: 4px;
+	background: var(--gs-white-12);
+	line-height: 20px;
+}
+
+.gs-stage .gs-stage__name {
+	font-size: 15.6px;
+	font-weight: 600;
+	color: var(--gs-text);
+}
+
+.gs-stage .gs-stage__since {
+	font-size: 13.2px;
+	color: var(--gs-muted);
+}
+
+.gs-stages__note {
+	margin-top: 14px;
+	font-size: 13.2px;
+	line-height: 20px;
+	color: var(--gs-muted);
+}
+
+.gs-stages__note a,
+.gs-profile__gate a {
+	color: var(--gs-red-accent);
+}
+
+.gs-filters.gs-buttons {
+	gap: 8px;
+	margin-top: 88px;
+}
+
+.gs-buttons .gs-btn--filter .wp-block-button__link {
+	padding: 7px 15px;
+	border: 1px solid var(--gs-white-28);
+	background: transparent;
+	font-size: 15px;
+	color: var(--gs-body);
+}
+
+.gs-buttons .gs-btn--filter .wp-block-button__link:hover {
+	border-color: var(--gs-text);
+	background: transparent;
+}
+
+.gs-buttons .gs-btn--filter.is-active .wp-block-button__link {
+	border-color: #fff;
+	background: #fff;
+	color: var(--gs-page);
+}
+
+.gs-athlete-grid.gs-grid {
+	margin-top: 28px;
+}
+
+.gs-athlete-grid > [hidden] {
+	display: none;
+}
+
+.gs-card--athlete-v {
+	display: flex;
+	flex-direction: column;
+}
+
+.gs-card--athlete-v .gs-card__photo img {
+	width: 100%;
+	height: 454px;
+	object-fit: cover;
+}
+
+.gs-card--athlete-v .gs-card__body {
+	justify-content: flex-start;
+	padding: 28px 32px 32px;
+}
+
+.gs-card--athlete-v .gs-card__name {
+	margin-top: 10px;
+}
+
+.gs-card--athlete-v .gs-card__meta {
+	margin-top: 2px;
+}
+
+.gs-card--athlete-v .gs-card__text {
+	margin-top: 14px;
+}
+
+.gs-card--athlete-v .gs-card__button {
+	margin-top: 20px;
+}
+
+.gs-buttons .gs-btn--small-outline .wp-block-button__link {
+	padding: 7px 15px;
+	font-size: 15px;
+}
+
+/* ---------------------------------------------------------------------------
+ * Our Athletes — expandable profile.
+ * ------------------------------------------------------------------------ */
+
+.gs-profiles.gs-section {
+	padding: 120px 0 127px;
+}
+
+.gs-profile.wp-block-details {
+	overflow: hidden;
+	border: 1px solid var(--gs-border);
+	border-radius: 8px;
+	background: var(--gs-raised);
+}
+
+.gs-profile > summary {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	padding: 18px 24px;
+	border-bottom: 1px solid var(--gs-border);
+	list-style: none;
+	cursor: pointer;
+}
+
+.gs-profile:not([open]) > summary {
+	border-bottom: 0;
+}
+
+.gs-profile > summary::-webkit-details-marker {
+	display: none;
+}
+
+.gs-profile .gs-profile__avatar {
+	flex: 0 0 72px;
+	width: 72px;
+	height: 72px;
+	border-radius: 50%;
+}
+
+.gs-profile .gs-profile__id {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	column-gap: 12px;
+	row-gap: 4px;
+	min-width: 0;
+}
+
+.gs-profile .gs-profile__name {
+	font-family: var(--gs-heading-font);
+	font-size: 27.5px;
+	font-weight: 700;
+	line-height: 29px;
+	color: var(--gs-text);
+}
+
+.gs-profile .gs-profile__meta {
+	flex-basis: 100%;
+	font-size: 15.2px;
+	line-height: 23px;
+	color: var(--gs-muted);
+}
+
+.gs-profile .gs-profile__toggle {
+	position: relative;
+	flex: 0 0 34px;
+	height: 34px;
+	margin-left: auto;
+	border: 1px solid var(--gs-white-28);
+	border-radius: 50%;
+}
+
+.gs-profile .gs-profile__toggle::before,
+.gs-profile .gs-profile__toggle::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 11px;
+	height: 1.5px;
+	background: #fff;
+	transform: translate(-50%, -50%);
+}
+
+.gs-profile .gs-profile__toggle::after {
+	transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.gs-profile[open] .gs-profile__toggle::after {
+	display: none;
+}
+
+.gs-profile .gs-profile__body {
+	padding: 32px 24px;
+}
+
+.gs-profile .gs-profile__overview {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 48px;
+}
+
+.gs-profile .gs-profile__label {
+	font-family: var(--gs-heading-font);
+	font-size: 13px;
+	font-weight: 700;
+	line-height: 18px;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	color: var(--gs-red-accent);
+}
+
+.gs-profile .gs-profile__label ~ .gs-profile__label {
+	margin-top: 24px;
+}
+
+.gs-profile .gs-profile__label + * {
+	margin-top: 12px;
+}
+
+.gs-profile .gs-profile__text {
+	font-size: 17px;
+	line-height: 28px;
+	color: var(--gs-body);
+}
+
+.gs-profile .gs-profile__text + .gs-profile__text {
+	margin-top: 16px;
+}
+
+.gs-profile .gs-profile__photo {
+	margin-top: 20px;
+}
+
+.gs-profile .gs-profile__photo img {
+	width: 100%;
+	height: 324px;
+	border-radius: 6px;
+	object-fit: cover;
+}
+
+.gs-list--check.wp-block-list {
+	gap: 9px;
+}
+
+.gs-list--check li {
+	padding-left: 21px;
+	font-size: 17px;
+	line-height: 28px;
+}
+
+.gs-list--check li::before {
+	top: 0;
+	width: 11px;
+	height: 16.5px;
+	border-radius: 0;
+	background: url("../icons/icon-check.svg") center / contain no-repeat;
+}
+
+.gs-chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.gs-chip {
+	padding: 6px 11px;
+	border: 1px solid var(--gs-border);
+	border-radius: 999px;
+	background: var(--gs-raised);
+	font-size: 13.2px;
+	line-height: 20px;
+	color: var(--gs-body);
+}
+
+.gs-profile .gs-profile__gate {
+	font-size: 17px;
+	line-height: 28px;
+	color: var(--gs-text);
+}
+
+.gs-profile__gate a {
+	font-weight: 600;
+}
+
+.gs-profile .gs-profile__record {
+	margin-top: 36px;
+}
+
+.gs-record.wp-block-table {
+	overflow-x: auto;
+	border: 1px solid var(--gs-border);
+	border-radius: 6px;
+	background: var(--gs-surface);
+}
+
+.gs-record thead {
+	border-bottom: 0;
+}
+
+.gs-record table {
+	width: 100%;
+	min-width: 560px;
+	border-collapse: collapse;
+}
+
+.gs-record th,
+.gs-record td {
+	padding: 0 16px;
+	border: 0;
+	text-align: left;
+}
+
+.gs-record th {
+	height: 43px;
+	font-family: var(--gs-heading-font);
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 16px;
+	letter-spacing: 3.25px;
+	text-transform: uppercase;
+	color: var(--gs-muted);
+}
+
+.gs-record th:first-child {
+	width: 218px;
+}
+
+.gs-record th:last-child {
+	width: 243px;
+}
+
+.gs-record td {
+	height: 55px;
+	border-top: 1px solid var(--gs-border);
+	font-size: 15.2px;
+	line-height: 23px;
+	color: var(--gs-text);
+}
+
+.gs-record td:first-child {
+	font-size: 15.6px;
+	font-weight: 600;
+	line-height: 20px;
+}
+
+.gs-profile .gs-profile__small {
+	margin-top: 12px;
+	font-size: 13.2px;
+	line-height: 20px;
+	color: var(--gs-muted);
+}
+
+.gs-profile .gs-profile__lower {
+	margin-top: 56px;
+}
+
+.gs-milestones {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.gs-milestones::before {
+	content: "";
+	position: absolute;
+	top: 10px;
+	bottom: 30px;
+	left: 4.5px;
+	width: 1px;
+	background: var(--gs-white-20);
+}
+
+.gs-milestone {
+	position: relative;
+	padding-left: 22px;
+	font-size: 17px;
+	line-height: 28px;
+}
+
+.gs-milestone::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 10px;
+	height: 17px;
+	background: url("../icons/marker.svg") center / contain no-repeat;
+}
+
+.gs-milestone .gs-milestone__date {
+	font-weight: 600;
+	color: var(--gs-text);
+}
+
+.gs-milestone .gs-milestone__text {
+	color: var(--gs-muted);
+}
+
+.gs-profile .gs-profile__partners {
+	font-size: 17px;
+	line-height: 28px;
+	color: var(--gs-text);
+}
+
+.gs-profile .gs-profile__button {
+	margin-top: 16px;
+}
+
+.gs-profile .gs-profile__note {
+	margin-top: 48px;
+}
+
+.gs-profile__note a {
+	color: var(--gs-body);
+	text-decoration: underline;
+}
+
+/* Figma wraps the profile copy at about 540px (milestones at 440px). */
+@media (min-width: 1200px) {
+	.gs-profile .gs-profile__col > p:not(.gs-profile__label),
+	.gs-profile .gs-list--check {
+		max-width: 540px;
+	}
+
+	.gs-milestone .gs-milestone__text {
+		max-width: 440px;
+	}
+
+	.gs-criteria .gs-card__text {
+		max-width: 180px;
+	}
+}
+
+/* ---------------------------------------------------------------------------
+ * Split sections — 520px copy beside a 590px aside (e.g. "How the portfolio grows").
+ * ------------------------------------------------------------------------ */
+
+.gs-split .gs-container {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 40px;
+}
+
+.gs-split .gs-split__copy {
+	flex: 0 1 520px;
+}
+
+.gs-split .gs-split__copy .gs-title {
+	margin-top: 12px;
+}
+
+.gs-split .gs-split__lead {
+	margin-top: 22px;
+	font-size: 21px;
+	line-height: 34px;
+	color: var(--gs-body);
+}
+
+.gs-split .gs-split__text {
+	margin-top: 24px;
+	font-size: 17px;
+	line-height: 28px;
+	color: var(--gs-muted);
+}
+
+.gs-split .gs-split__aside {
+	flex: 0 1 590px;
+}
+
+.gs-split .gs-split__title {
+	font-size: 27.5px;
+	line-height: 29px;
+}
+
+.gs-split .gs-criteria {
+	margin-top: 12px;
+}
+
+.gs-split .gs-split__button {
+	margin-top: 28px;
+}
+
+.gs-card--text {
+	padding: 28px 24px 32px 32px;
+}
+
+.gs-card--text .gs-card__title {
+	font-size: 20.8px;
+	line-height: 24px;
+}
+
+.gs-card--text .gs-card__text {
+	margin-top: 8px;
+	font-size: 15.4px;
+	line-height: 24px;
+}
+
+/* ===========================================================================
+ * Tablet (below 1200px)
+ * ======================================================================== */
+
+@media (max-width: 1199px) {
+	.gs-hero-mark {
+		padding: 71px 0 40px;
+		background: radial-gradient(circle at 5.5% 77%, rgba(115, 13, 26, 0.5) 0%, rgba(115, 13, 26, 0) 50%), var(--gs-page);
+	}
+
+	.gs-hero-mark::before,
+	.gs-hero-mark .gs-hero-mark__aside {
+		display: none;
+	}
+
+	.gs-hero-mark .gs-hero-mark__title {
+		margin-top: 15px;
+		font-size: 39px;
+		line-height: 38px;
+	}
+
+	.gs-hero-mark .gs-hero-mark__text {
+		margin-top: 18px;
+		font-size: 18px;
+		line-height: 31px;
+	}
+
+	.gs-portfolio.gs-section {
+		padding: 64px 0;
+	}
+
+	.gs-portfolio .gs-heading + .gs-stages {
+		margin-top: 34px;
+	}
+
+	.gs-stages {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 16px;
+	}
+
+	.gs-filters.gs-buttons {
+		margin-top: 48px;
+	}
+
+	.gs-athlete-grid.gs-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		align-items: stretch;
+	}
+
+	/* Future card matches the athlete card height; its glow panel takes the extra space. */
+	.gs-athlete-grid .gs-card--future .gs-card__panel {
+		flex: 1 1 auto;
+		min-height: 260px;
+		aspect-ratio: auto;
+	}
+
+	.gs-card--athlete-v .gs-card__body {
+		padding: 24px 24px 28px;
+	}
+
+	.gs-profiles.gs-section {
+		padding: 64px 0;
+	}
+
+	.gs-profile > summary {
+		align-items: flex-start;
+		gap: 14px;
+		padding: 16px;
+	}
+
+	.gs-profile .gs-profile__avatar {
+		flex-basis: 56px;
+		width: 56px;
+		height: 56px;
+	}
+
+	.gs-profile .gs-profile__body {
+		padding: 24px 16px;
+	}
+
+	.gs-profile .gs-profile__overview {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 32px;
+	}
+
+	.gs-profile .gs-profile__lower {
+		margin-top: 40px;
+	}
+
+	.gs-profile .gs-profile__photo img {
+		height: 200px;
+	}
+
+	/* The record table keeps its columns and scrolls sideways inside its frame. */
+	.gs-record table {
+		min-width: 460px;
+	}
+
+	.gs-record th:first-child {
+		width: 90px;
+	}
+
+	.gs-record th:last-child {
+		width: 120px;
+	}
+
+	.gs-split .gs-container {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 20px;
+	}
+
+	.gs-split .gs-split__copy,
+	.gs-split .gs-split__aside {
+		flex: none;
+	}
+
+	.gs-split .gs-split__lead {
+		margin-top: 16px;
+		font-size: 17px;
+		line-height: 28px;
+	}
+
+	.gs-split .gs-split__text {
+		margin-top: 14px;
+		font-size: 15.4px;
+		line-height: 26px;
+	}
+
+	.gs-split .gs-split__button .wp-block-button,
+	.gs-split .gs-split__button .wp-block-button__link {
+		width: 100%;
+	}
+}
+
+/* ===========================================================================
+ * Mobile (below 768px)
+ * ======================================================================== */
+
+@media (max-width: 767px) {
+	.gs-stages,
+	.gs-athlete-grid.gs-grid {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.gs-card--athlete-v .gs-card__photo img {
+		height: 444px;
+	}
+
+	.gs-profile .gs-profile__name {
+		font-size: 22.4px;
+		line-height: 26px;
+	}
+
+	.gs-profile .gs-profile__toggle {
+		flex-basis: 30px;
+		height: 30px;
+	}
+
+	.gs-split .gs-criteria.gs-grid {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 16px;
+	}
+
+	.gs-split .gs-split__button .wp-block-button,
+	.gs-split .gs-split__button .wp-block-button__link {
+		width: 100%;
+	}
+}

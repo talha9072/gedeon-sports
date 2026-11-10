@@ -1,0 +1,5 @@
+/* Editor: keep the dark page background behind the canvas. */
+.editor-styles-wrapper {
+	background: #0b0c10;
+	color: #d5d5da;
+}

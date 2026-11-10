@@ -1,0 +1,644 @@
+/*
+ * Gedeon Sports — Our Approach (and the Split hero shared with Partnerships).
+ * Measurements from "Our Approach / Desktop / Working" (1920), tablet (768) and mobile (390).
+ */
+
+/* Page Hero / Split — 560px copy, 426 × 320 photo 80px down, glow behind the photo. */
+.gs-hero-split.gs-hero-mark {
+	padding: 133px 0 103px;
+}
+
+.gs-hero-split.gs-hero-mark::before {
+	top: calc(50% - 169.5px);
+	right: -80px;
+	width: 900px;
+	height: 500px;
+	background: radial-gradient(50% 50% at 50% 50%, rgba(115, 10, 20, 0.35) 0%, rgba(115, 10, 20, 0) 100%);
+}
+
+.gs-hero-split > .gs-container {
+	gap: 40px;
+	justify-content: space-between;
+}
+
+.gs-hero-split .gs-hero-split__copy {
+	flex: 0 1 560px;
+}
+
+.gs-hero-split .gs-hero-mark__text {
+	margin-top: 35px;
+}
+
+.gs-hero-split .gs-hero-split__media {
+	flex: 0 0 426px;
+	margin: 80px 75px 0 0;
+}
+
+.gs-hero-split .gs-hero-split__media img {
+	width: 100%;
+	height: 320px;
+	border-radius: 8px;
+	object-fit: cover;
+}
+
+/* Step cards joined by small arrow pills. */
+.gs-grid--4 {
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.gs-cycle.gs-grid {
+	gap: 12px;
+}
+
+.gs-card--step {
+	position: relative;
+	overflow: visible;
+	padding: 20px 24px 24px;
+}
+
+.gs-card--step .gs-card__title {
+	margin-top: 12px;
+	font-size: 22.4px;
+	line-height: 26px;
+}
+
+.gs-card--step .gs-card__text {
+	margin-top: 8px;
+	font-size: 15.4px;
+	line-height: 24px;
+}
+
+.gs-cycle .gs-card--step:not(:last-child)::after {
+	content: "→";
+	position: absolute;
+	top: 50%;
+	right: -16px;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 20px;
+	height: 20px;
+	box-sizing: border-box;
+	border: 1px solid var(--gs-white-28);
+	border-radius: 999px;
+	background: var(--gs-page);
+	font-size: 13.2px;
+	line-height: 20px;
+	color: var(--gs-text);
+	transform: translateY(-50%);
+}
+
+/* Who does what */
+.gs-responsibilities.gs-section {
+	padding-bottom: 125px;
+}
+
+.gs-card--list {
+	padding: 32px 36px 40px 32px;
+}
+
+.gs-card--list .gs-card__title {
+	margin-top: 28px;
+	font-size: 27.5px;
+	line-height: 29px;
+}
+
+.gs-card--list .gs-list {
+	margin-top: 14px;
+}
+
+.gs-list--small li {
+	padding-left: 23px;
+	font-size: 15.4px;
+	line-height: 24px;
+}
+
+.gs-list--small li::before {
+	height: 14.5px;
+}
+
+/* Stage gates ladder: each stage narrower than the last, dashed rail through the gates. */
+.gs-gates.gs-section {
+	padding-bottom: 136px;
+}
+
+.gs-ladder__stage {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	min-height: 65px;
+	box-sizing: border-box;
+	padding: 0 22px;
+	border: 1px solid var(--gs-border);
+	border-radius: 8px;
+	background: var(--gs-raised);
+}
+
+.gs-ladder__stage--2 {
+	width: 91.875%;
+}
+
+.gs-ladder__stage--3 {
+	width: 83.98%;
+}
+
+.gs-ladder__stage--4 {
+	width: 76.02%;
+	border-color: var(--gs-red-border);
+	background: linear-gradient(90deg, rgba(107, 18, 31, 0.55) 0%, rgba(107, 18, 31, 0) 100%), #25121a;
+}
+
+.gs-ladder .gs-ladder__name {
+	font-size: 20.8px;
+	line-height: 24px;
+}
+
+.gs-ladder .gs-ladder__level {
+	font-size: 15.2px;
+	line-height: 23px;
+	color: var(--gs-muted);
+	text-align: right;
+}
+
+.gs-ladder__gate {
+	position: relative;
+	display: flex;
+	padding: 18px 0 16px 58px;
+}
+
+.gs-ladder__gate::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 39px;
+	left: 28px;
+	border-left: 1px dashed var(--gs-white-20);
+}
+
+.gs-ladder .gs-ladder__label {
+	flex: 0 0 106px;
+	padding-top: 2px;
+	font-family: var(--gs-heading-font);
+	font-size: 13px;
+	font-weight: 700;
+	line-height: 18px;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	color: var(--gs-red-accent);
+}
+
+.gs-ladder .gs-ladder__criteria {
+	flex: 1 1 0;
+	min-width: 0;
+}
+
+.gs-ladder .gs-ladder__text {
+	font-size: 15.2px;
+	line-height: 23px;
+	color: var(--gs-body);
+}
+
+.gs-ladder .gs-chips {
+	gap: 6px;
+	margin-top: 10px;
+}
+
+.gs-chip--outline {
+	padding: 3px 9px;
+	border-color: var(--gs-white-28);
+	background: transparent;
+}
+
+.gs-callout {
+	padding: 18px 20px;
+	border-left: 3px solid var(--gs-red);
+	border-radius: 4px;
+	background: var(--gs-raised);
+	font-size: 15.4px;
+	line-height: 24px;
+	color: var(--gs-body);
+}
+
+.gs-callout strong {
+	font-weight: 600;
+	color: var(--gs-text);
+}
+
+.gs-gates .gs-gates__callout {
+	margin-top: 28px;
+}
+
+/* Four workstreams — overlapping bars. */
+.gs-workstreams.gs-section {
+	padding-bottom: 128px;
+}
+
+.gs-streams {
+	position: relative;
+	height: 204px;
+}
+
+.gs-streams__bar {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	height: 42px;
+	padding-left: 18px;
+	border-radius: 999px;
+	font-family: var(--gs-heading-font);
+	font-size: 13.5px;
+	font-weight: 700;
+	line-height: 18px;
+	letter-spacing: 0.4px;
+	color: var(--gs-text);
+	white-space: nowrap;
+}
+
+.gs-streams__bar--1 {
+	top: 0;
+	right: 45%;
+	left: 0;
+	background: #2b2f3a;
+}
+
+.gs-streams__bar--2 {
+	top: 54px;
+	right: 28%;
+	left: 12.1%;
+	background: #3d2025;
+}
+
+.gs-streams__bar--3 {
+	top: 108px;
+	right: 12.1%;
+	left: 30%;
+	background: #6b1822;
+}
+
+.gs-streams__bar--4 {
+	top: 162px;
+	right: 0;
+	left: 48%;
+	background: var(--gs-red);
+}
+
+.gs-streams__axis {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 12px;
+	font-size: 13.2px;
+	line-height: 20px;
+	color: var(--gs-muted);
+}
+
+/* Programme funding */
+.gs-funding.gs-section {
+	padding-bottom: 126px;
+}
+
+.gs-split .gs-split__body {
+	margin-top: 22px;
+	font-size: 17px;
+	line-height: 28px;
+	color: var(--gs-body);
+}
+
+.gs-split .gs-split__text--tight {
+	margin-top: 16px;
+}
+
+.gs-funding .gs-funding__title {
+	margin-top: 20px;
+}
+
+.gs-funding .gs-list {
+	gap: 9px;
+	margin-top: 12px;
+}
+
+.gs-funding .gs-funding__note {
+	margin-top: 24px;
+	font-size: 13.2px;
+	line-height: 20px;
+	color: var(--gs-muted);
+}
+
+.gs-mix {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	max-width: 553px;
+	padding: 28px 28px 30px;
+	border: 1px solid var(--gs-border);
+	border-radius: 8px;
+	background: var(--gs-raised);
+}
+
+.gs-mix .gs-mix__title {
+	font-size: 19.9px;
+	line-height: 24px;
+}
+
+.gs-mix__rows {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+.gs-mix__row {
+	display: flex;
+	align-items: center;
+}
+
+.gs-mix__year {
+	flex: 0 0 129px;
+	font-size: 15.2px;
+	line-height: 23px;
+	color: var(--gs-muted);
+}
+
+.gs-mix__bar {
+	display: flex;
+	flex: 1 1 0;
+	height: 31px;
+	overflow: hidden;
+	border-radius: 4px;
+}
+
+.gs-mix__seg {
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	padding-left: 8px;
+	font-family: var(--gs-heading-font);
+	font-size: 13.5px;
+	font-weight: 700;
+	line-height: 18px;
+	letter-spacing: 0.4px;
+	color: var(--gs-text);
+	white-space: nowrap;
+}
+
+.gs-mix__seg--investors,
+.gs-mix__key--investors::before {
+	background: var(--gs-red);
+}
+
+.gs-mix__seg--holding,
+.gs-mix__key--holding::before {
+	background: #7a242f;
+}
+
+.gs-mix__seg--public,
+.gs-mix__key--public::before {
+	background: #4a505e;
+}
+
+.gs-mix__seg--sponsors,
+.gs-mix__key--sponsors::before {
+	background: #2b2f3a;
+}
+
+.gs-mix__seg--commercial,
+.gs-mix__key--commercial::before {
+	background: #c9a2a7;
+}
+
+.gs-mix__seg--commercial {
+	color: var(--gs-page);
+}
+
+.gs-mix__legend {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px 18px;
+}
+
+.gs-mix__key {
+	display: flex;
+	align-items: center;
+	gap: 7px;
+	font-size: 13.2px;
+	line-height: 20px;
+	color: var(--gs-muted);
+}
+
+.gs-mix__key::before {
+	content: "";
+	width: 9px;
+	height: 9px;
+	border-radius: 2px;
+}
+
+.gs-mix .gs-mix__note {
+	font-size: 13.2px;
+	line-height: 20px;
+	color: var(--gs-muted);
+}
+
+/* Welfare cards */
+.gs-card--welfare {
+	padding: 30px 22px 32px 32px;
+}
+
+.gs-card--welfare .gs-card__title {
+	font-size: 19.9px;
+	line-height: 24px;
+}
+
+.gs-card--text.gs-card--welfare .gs-card__text {
+	max-width: none;
+}
+
+.gs-card--welfare .gs-card__text a {
+	font-weight: 600;
+	color: var(--gs-red-accent);
+}
+
+/* ===========================================================================
+ * Tablet (below 1200px)
+ * ======================================================================== */
+
+@media (max-width: 1199px) {
+	.gs-hero-split.gs-hero-mark {
+		padding: 0 0 40px;
+	}
+
+	.gs-hero-split > .gs-container {
+		flex-direction: column-reverse;
+		gap: 0;
+	}
+
+	.gs-hero-split .gs-hero-split__copy {
+		flex: none;
+		padding-top: 24px;
+	}
+
+	.gs-hero-split .gs-hero-mark__text {
+		margin-top: 18px;
+	}
+
+	.gs-hero-split .gs-hero-split__media {
+		flex: none;
+		width: 100vw;
+		margin: 0 calc(-1 * var(--gs-gutter));
+	}
+
+	.gs-hero-split .gs-hero-split__media img {
+		height: 372px;
+		border-radius: 0;
+	}
+
+	.gs-grid--4 {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.gs-cycle.gs-grid {
+		gap: 24px;
+	}
+
+	.gs-cycle .gs-card--step::after {
+		display: none;
+	}
+
+	.gs-card--list {
+		padding: 24px;
+	}
+
+	.gs-card--list .gs-card__title {
+		margin-top: 20px;
+		font-size: 22.4px;
+		line-height: 26px;
+	}
+
+	.gs-responsibilities.gs-section,
+	.gs-gates.gs-section,
+	.gs-workstreams.gs-section,
+	.gs-funding.gs-section {
+		padding-bottom: 64px;
+	}
+
+	.gs-ladder__stage--2,
+	.gs-ladder__stage--3,
+	.gs-ladder__stage--4 {
+		width: auto;
+	}
+
+	.gs-ladder__stage {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 2px;
+		padding: 14px 18px;
+	}
+
+	.gs-ladder .gs-ladder__level {
+		text-align: left;
+	}
+
+	.gs-ladder__gate {
+		flex-direction: column;
+		gap: 8px;
+		padding: 16px 0 16px 40px;
+	}
+
+	.gs-ladder__gate::before {
+		bottom: 0;
+		left: 20px;
+	}
+
+	.gs-ladder .gs-ladder__label {
+		flex: none;
+	}
+
+	.gs-ladder .gs-chips {
+		flex-wrap: wrap;
+	}
+
+	.gs-streams {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		height: auto;
+	}
+
+	.gs-streams__bar {
+		position: relative;
+		top: auto;
+		right: auto;
+		left: auto;
+	}
+
+	.gs-streams__bar--1 {
+		margin-right: 45%;
+	}
+
+	.gs-streams__bar--2 {
+		margin: 0 28% 0 12.1%;
+	}
+
+	.gs-streams__bar--3 {
+		margin: 0 12.1% 0 30%;
+	}
+
+	.gs-streams__bar--4 {
+		margin-left: 48%;
+	}
+
+	.gs-mix {
+		max-width: none;
+	}
+
+	.gs-card--welfare {
+		padding: 24px;
+	}
+}
+
+/* ===========================================================================
+ * Mobile (below 768px)
+ * ======================================================================== */
+
+@media (max-width: 767px) {
+	.gs-hero-split .gs-hero-split__media img {
+		height: 236px;
+	}
+
+	.gs-grid--4 {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 16px;
+	}
+
+	.gs-streams__bar {
+		padding-left: 12px;
+		font-size: 12px;
+	}
+
+	.gs-streams__bar--1 {
+		margin-right: 30%;
+	}
+
+	.gs-streams__bar--2 {
+		margin: 0 12% 0 8%;
+	}
+
+	.gs-streams__bar--3 {
+		margin: 0 4% 0 18%;
+	}
+
+	.gs-streams__bar--4 {
+		margin-left: 30%;
+	}
+
+	.gs-mix {
+		padding: 22px 18px;
+	}
+
+	.gs-mix__year {
+		flex-basis: 52px;
+	}
+
+	.gs-mix__seg {
+		font-size: 12px;
+	}
+}

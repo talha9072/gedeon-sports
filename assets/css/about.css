@@ -1,0 +1,703 @@
+/*
+ * Gedeon Sports — About & Contact.
+ * Measurements from "About & Contact / Desktop / Working" (1920), tablet (768) and mobile (390).
+ */
+
+/* Hero / Mark — faded mark sits 115px down; Get in touch button under the copy. */
+.gs-hero-mark--about {
+	padding-bottom: 82px;
+}
+
+.gs-hero-mark--about .gs-hero-mark__aside {
+	padding-top: 115px;
+}
+
+.gs-hero-mark .gs-hero-mark__buttons {
+	margin-top: 36px;
+}
+
+/* Leadership — team cards and the advisory board. */
+.gs-leadership.gs-grid {
+	gap: 20px;
+}
+
+.gs-leadership .gs-card--team .gs-card__body {
+	padding: 16px 22px 20px;
+}
+
+@media (min-width: 1200px) {
+	.gs-leadership .gs-card--team .gs-card__text {
+		max-width: 330px;
+	}
+}
+
+.gs-leadership-section .gs-advisors__title {
+	margin-top: 60px;
+	font-size: 22.4px;
+	line-height: 26px;
+}
+
+.gs-advisors.gs-grid {
+	gap: 20px;
+	margin-top: 16px;
+}
+
+.gs-card--advisor {
+	padding: 22px 24px 34px;
+}
+
+.gs-card--advisor .gs-card__title {
+	font-size: 22.4px;
+	line-height: 26px;
+}
+
+.gs-card--advisor .gs-card__text {
+	margin-top: 8px;
+	font-size: 15.4px;
+	line-height: 24px;
+	color: var(--gs-muted);
+}
+
+@media (min-width: 1200px) {
+	.gs-card--advisor .gs-card__text {
+		max-width: 220px;
+	}
+}
+
+/* Part of Gedeon Holding — copy, facts and the group diagram. */
+.gs-about-group.gs-section {
+	padding: 120px 0 115px;
+}
+
+.gs-about-group .gs-split__copy {
+	flex-basis: 526px;
+}
+
+.gs-about-group .gs-split__body {
+	margin-top: 22px;
+	color: var(--gs-body);
+}
+
+.gs-about-group .gs-split__body--next {
+	margin-top: 16px;
+}
+
+.gs-about-facts {
+	margin-top: 22px;
+}
+
+.gs-about-facts .gs-facts,
+.gs-details .gs-facts {
+	margin-top: 0;
+}
+
+.gs-about-facts .gs-facts .gs-facts__row,
+.gs-details .gs-facts .gs-facts__row {
+	grid-template-columns: 106px minmax(0, 1fr);
+	gap: 0;
+	font-size: 14px;
+	line-height: 23px;
+}
+
+.gs-about-facts .gs-facts .gs-facts__row > *,
+.gs-details .gs-facts .gs-facts__row > * {
+	min-width: 0;
+	overflow-wrap: anywhere;
+	padding: 11px 0;
+	border-top: 1px solid var(--gs-border);
+}
+
+.gs-tree {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: var(--gs-text-font);
+}
+
+.gs-tree__parent {
+	padding: 16px 30px;
+	border: 1px solid var(--gs-border);
+	border-radius: 6px;
+	background: var(--gs-raised);
+	font-size: 15.6px;
+	font-weight: 600;
+	line-height: 20px;
+	color: var(--gs-text);
+}
+
+.gs-tree__line {
+	width: 1px;
+	height: 14px;
+	margin: 14px 0;
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.gs-tree__row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 8px;
+}
+
+.gs-tree__node,
+.gs-tree__stake {
+	padding: 9px 14px;
+	border: 1px solid var(--gs-border);
+	border-radius: 4px;
+	background: var(--gs-raised);
+	font-size: 13.2px;
+	line-height: 20px;
+	color: var(--gs-body);
+	white-space: nowrap;
+}
+
+.gs-tree__node.is-current {
+	border-color: var(--gs-red);
+	color: var(--gs-red-accent);
+}
+
+.gs-tree__caption {
+	font-size: 13.2px;
+	line-height: 20px;
+	color: var(--gs-muted);
+}
+
+.gs-tree__row--stakes {
+	padding-top: 12px;
+}
+
+.gs-tree__stake {
+	border-color: rgba(255, 255, 255, 0.28);
+	font-size: 15.4px;
+	font-weight: 600;
+	line-height: 24px;
+	color: var(--gs-text);
+}
+
+.gs-tree__stake.is-future {
+	border: 1px dashed rgba(255, 255, 255, 0.2);
+	background: none;
+	font-size: 13.2px;
+	font-weight: 400;
+	line-height: 20px;
+	color: var(--gs-muted);
+}
+
+/* Accountability table. */
+.gs-duties-section.gs-section {
+	padding: 120px 0 127px;
+}
+
+.gs-duties {
+	margin-top: 60px;
+	overflow-x: auto;
+	border: 1px solid var(--gs-border);
+	border-radius: 6px;
+	background: var(--gs-surface);
+}
+
+.gs-duties table {
+	width: 100%;
+	border-collapse: collapse;
+	font-family: var(--gs-text-font);
+	color: var(--gs-text);
+	text-align: left;
+}
+
+.gs-duties th,
+.gs-duties td {
+	padding: 14px 0;
+	vertical-align: top;
+}
+
+.gs-duties tr > :first-child {
+	width: 209px;
+	padding-left: 16px;
+}
+
+.gs-duties tr > :nth-child(2) {
+	width: 580px;
+}
+
+.gs-duties tr > :last-child {
+	padding-right: 16px;
+}
+
+.gs-duties thead th {
+	padding-top: 14px;
+	padding-bottom: 14px;
+	font-family: var(--gs-heading-font);
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 16px;
+	letter-spacing: 3.25px;
+	text-transform: uppercase;
+	color: var(--gs-muted);
+}
+
+.gs-duties tbody tr {
+	border-top: 1px solid var(--gs-border);
+}
+
+.gs-duties tbody th {
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 23px;
+}
+
+.gs-duties tbody td {
+	font-size: 15.2px;
+	line-height: 23px;
+}
+
+/* Policies. */
+.gs-policies.gs-grid {
+	gap: 20px;
+}
+
+.gs-card--policy {
+	padding: 30px 24px 32px 32px;
+}
+
+.gs-card--policy .gs-card__title {
+	font-size: 19.9px;
+	line-height: 24px;
+}
+
+.gs-card--policy .gs-card__text {
+	margin-top: 8px;
+	font-size: 15.4px;
+	line-height: 24px;
+	color: var(--gs-muted);
+}
+
+.gs-card--policy .gs-card__status {
+	align-self: flex-start;
+	width: fit-content;
+	margin-top: 16px;
+	padding: 4px 10px;
+	border: 1px solid rgba(255, 255, 255, 0.28);
+	border-radius: 3px;
+	font-size: 11px;
+	font-weight: 700;
+	line-height: 14px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: var(--gs-body);
+}
+
+@media (min-width: 1200px) {
+	.gs-card--policy .gs-card__text {
+		max-width: 300px;
+	}
+}
+
+/* Company information. */
+.gs-company-section .gs-split__text {
+	margin-top: 22px;
+}
+
+.gs-details .gs-facts .gs-facts__row {
+	grid-template-columns: 206px minmax(0, 1fr);
+}
+
+/* Contact — copy with the logo panel beside the enquiry form. */
+.gs-contact-section.gs-section {
+	padding: 120px 0 122px;
+}
+
+.gs-contact-section .gs-split__copy {
+	flex-basis: 590px;
+	padding-top: 8px;
+}
+
+.gs-contact-section .gs-contact__note {
+	margin-top: 16px;
+	font-size: 15.4px;
+	line-height: 24px;
+	color: var(--gs-muted);
+}
+
+.gs-contact__panel {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 310px;
+	margin-top: 34px;
+	border: 1px solid var(--gs-border);
+	border-radius: 8px;
+	background: radial-gradient(50% 50% at 50% 50%, rgba(107, 13, 26, 0.45) 0%, rgba(107, 13, 26, 0) 100%), var(--gs-raised);
+}
+
+.gs-contact__panel .gs-contact__logo img {
+	width: 335px;
+	height: auto;
+}
+
+.gs-contact__form {
+	box-sizing: border-box;
+	padding: 34px 32px 42px;
+	border: 1px solid var(--gs-border);
+	border-radius: 8px;
+	background: var(--gs-raised);
+}
+
+.gs-form--contact .gs-form__fields {
+	gap: 18px 16px;
+	margin-top: 0;
+}
+
+.gs-form .gs-field--choices {
+	gap: 0;
+	min-width: 0;
+	margin: 0 0 4px;
+	padding: 0;
+	border: 0;
+}
+
+.gs-form .gs-field--choices legend {
+	padding: 0;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 20px;
+	color: var(--gs-text);
+}
+
+.gs-choices {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 9px 8px;
+	margin-top: 12px;
+}
+
+.gs-form .gs-field .gs-choice {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	box-sizing: border-box;
+	height: 53px;
+	padding: 0 16px;
+	border: 1px solid var(--gs-border);
+	border-radius: 6px;
+	background: var(--gs-page);
+	font-size: 15.4px;
+	font-weight: 400;
+	line-height: 24px;
+	color: var(--gs-body);
+	cursor: pointer;
+}
+
+.gs-form .gs-choice input {
+	flex: none;
+	width: 12px;
+	height: 12px;
+	margin: 0;
+	border: 0;
+	background: url("../icons/radio.svg") center / contain no-repeat;
+	appearance: none;
+	cursor: pointer;
+}
+
+.gs-form .gs-choice input:checked {
+	background-image: url("../icons/radio-checked.svg");
+}
+
+.gs-form .gs-choice:has(input:checked) {
+	border-color: var(--gs-red);
+	background: rgba(213, 31, 53, 0.14);
+}
+
+.gs-form .gs-choice:has(input:focus-visible) {
+	outline: 2px solid var(--gs-red-accent);
+	outline-offset: 2px;
+}
+
+.gs-form .gs-field__help {
+	margin-top: 16px;
+	font-size: 13.2px;
+	line-height: 20px;
+	color: var(--gs-muted);
+}
+
+.gs-form .gs-field__optional {
+	font-weight: 400;
+	color: var(--gs-muted);
+}
+
+.gs-form--contact .gs-field input,
+.gs-form--contact .gs-field textarea {
+	font-size: 15.4px;
+	line-height: 24px;
+}
+
+.gs-form .gs-field--consent {
+	margin-top: 12px;
+}
+
+.gs-form .gs-field.gs-field--consent label {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+	font-size: 13.2px;
+	font-weight: 400;
+	line-height: 20px;
+	color: var(--gs-body);
+	cursor: pointer;
+}
+
+.gs-form .gs-field--consent input {
+	flex: none;
+	width: 16px;
+	height: 16px;
+	margin: 0;
+	padding: 0;
+	border: 1px solid var(--gs-muted);
+	border-radius: 3px;
+	background: var(--gs-page);
+	appearance: none;
+	cursor: pointer;
+}
+
+.gs-form .gs-field--consent input:checked {
+	border-color: var(--gs-red);
+	background: var(--gs-red) url("../icons/icon-check.svg") center / 9px no-repeat;
+}
+
+.gs-form .gs-field--consent a {
+	color: var(--gs-body);
+	text-decoration: underline;
+}
+
+.gs-form--contact .gs-form__submit {
+	margin-top: 27px;
+}
+
+/* ===========================================================================
+ * Tablet (below 1200px)
+ * ======================================================================== */
+
+@media (max-width: 1199px) {
+	.gs-hero-mark--about {
+		padding-bottom: 64px;
+	}
+
+	.gs-leadership.gs-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.gs-advisors.gs-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.gs-leadership-section .gs-advisors__title {
+		margin-top: 40px;
+	}
+
+	.gs-about-group.gs-section,
+	.gs-duties-section.gs-section,
+	.gs-contact-section.gs-section {
+		padding: 64px 0;
+	}
+
+	.gs-about-group .gs-container,
+	.gs-contact-section .gs-container {
+		gap: 34px;
+	}
+
+	.gs-tree-wrap {
+		padding: 32px 0;
+	}
+
+	.gs-duties {
+		margin-top: 34px;
+	}
+
+	.gs-duties table {
+		min-width: 680px;
+	}
+
+	.gs-duties tr > :first-child {
+		width: 150px;
+	}
+
+	.gs-duties tr > :nth-child(2) {
+		width: auto;
+	}
+
+	.gs-policies.gs-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		align-items: stretch;
+		gap: 24px;
+		margin-top: 24px;
+	}
+
+	.gs-company-section .gs-container {
+		gap: 34px;
+	}
+
+	.gs-contact-section .gs-split__copy {
+		padding-top: 0;
+	}
+
+	.gs-contact__panel {
+		height: 260px;
+	}
+}
+
+/* ===========================================================================
+ * Mobile (below 768px)
+ * ======================================================================== */
+
+@media (max-width: 767px) {
+	.gs-hero-mark .gs-hero-mark__buttons .wp-block-button,
+	.gs-hero-mark .gs-hero-mark__buttons .wp-block-button__link {
+		width: 100%;
+	}
+
+	.gs-leadership.gs-grid,
+	.gs-advisors.gs-grid,
+	.gs-policies.gs-grid {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 16px;
+	}
+
+	.gs-tree__node {
+		padding: 9px 10px;
+	}
+
+	.gs-details .gs-facts .gs-facts__row {
+		grid-template-columns: 150px minmax(0, 1fr);
+	}
+
+	.gs-contact__panel {
+		height: 200px;
+	}
+
+	.gs-contact__panel .gs-contact__logo img {
+		width: 240px;
+	}
+
+	.gs-contact__form {
+		padding: 24px 16px 28px;
+	}
+
+	.gs-choices {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.gs-form .gs-field .gs-choice {
+		height: 48px;
+	}
+}
+
+/* ===========================================================================
+ * Notices — Thank You and 404 (full screen, home hero photo under a 78% overlay).
+ * ======================================================================== */
+
+.gs-notice {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	min-height: max(600px, calc(100vh - var(--gs-header-height, 72px)));
+	padding: 48px var(--gs-gutter, 32px) 120px;
+	overflow: hidden;
+	background: var(--gs-page);
+	text-align: center;
+}
+
+.gs-notice .gs-notice__image {
+	position: absolute;
+	inset: 0;
+	margin: 0;
+}
+
+.gs-notice .gs-notice__image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.gs-notice::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: var(--gs-page);
+	opacity: 0.78;
+}
+
+.gs-notice--code .gs-notice__image,
+.gs-notice--code::after {
+	display: none;
+}
+
+.gs-notice .gs-notice__message {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 780px;
+}
+
+.gs-notice .gs-notice__title {
+	margin-top: 14px;
+	font-size: 70.3px;
+	line-height: 70px;
+	color: var(--gs-text);
+}
+
+.gs-notice .gs-notice__code {
+	font-family: var(--gs-heading-font);
+	font-size: 81px;
+	font-weight: 700;
+	line-height: 85px;
+	color: var(--gs-red-accent);
+}
+
+.gs-notice--code .gs-notice__title {
+	margin-top: 8px;
+	font-size: 51.5px;
+	line-height: 52px;
+}
+
+.gs-notice .gs-notice__text {
+	margin-top: 20px;
+	font-size: 21px;
+	line-height: 34px;
+	color: var(--gs-body);
+}
+
+.gs-notice .gs-notice__buttons {
+	justify-content: center;
+	margin-top: 36px;
+}
+
+@media (max-width: 1199px) {
+	.gs-notice {
+		min-height: max(520px, calc(100vh - 64px));
+		padding-bottom: 64px;
+	}
+
+	.gs-notice .gs-notice__title {
+		font-size: 41px;
+		line-height: 44px;
+	}
+
+	.gs-notice .gs-notice__code {
+		font-size: 56px;
+		line-height: 60px;
+	}
+
+	.gs-notice--code .gs-notice__title {
+		font-size: 31.5px;
+		line-height: 32px;
+	}
+
+	.gs-notice .gs-notice__text {
+		font-size: 17px;
+		line-height: 28px;
+	}
+}

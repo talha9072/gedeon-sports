@@ -1,0 +1,713 @@
+/*
+ * Gedeon Sports — Home page sections. Measurements from "Home / Desktop / Working" (1920),
+ * "Home / Tablet / Working" (768) and "Home / Mobile / Working" (390).
+ */
+
+/* ---------------------------------------------------------------------------
+ * Hero — 820 tall; wide photo anchored right under two dark gradients, 720px copy.
+ * ------------------------------------------------------------------------ */
+
+.gs-hero {
+	position: relative;
+	display: flex;
+	align-items: center;
+	min-height: 820px;
+	padding-top: 46px;
+	overflow: hidden;
+	background: var(--gs-page);
+}
+
+.gs-hero .gs-hero__media {
+	position: absolute;
+	inset: 0;
+}
+
+.gs-hero .gs-hero__image {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 102.5%;
+}
+
+.gs-hero .gs-hero__image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.gs-hero .gs-hero__media::before,
+.gs-hero .gs-hero__media::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	pointer-events: none;
+}
+
+.gs-hero .gs-hero__media::before {
+	background: linear-gradient(90deg, #0b0c10 0%, rgba(11, 12, 16, 0.97) 25%, rgba(11, 12, 16, 0.8) 45%, rgba(11, 12, 16, 0.2) 65%, rgba(11, 12, 16, 0) 100%);
+}
+
+.gs-hero .gs-hero__media::after {
+	background: linear-gradient(180deg, rgba(11, 12, 16, 0) 72%, #0b0c10 100%);
+}
+
+.gs-hero .gs-hero__tag {
+	position: absolute;
+	right: 26px;
+	bottom: 24px;
+	z-index: 2;
+}
+
+.gs-hero > .gs-container {
+	position: relative;
+	z-index: 2;
+}
+
+.gs-hero .gs-hero__copy {
+	max-width: 720px;
+}
+
+.gs-hero .gs-hero__title {
+	margin-top: 10px;
+	font-size: 81px;
+	line-height: 85px;
+	color: var(--gs-text);
+}
+
+.gs-hero .gs-hero__highlight {
+	color: var(--gs-red-accent);
+}
+
+.gs-hero .gs-hero__text {
+	max-width: 640px;
+	margin-top: 36px;
+	font-size: 21px;
+	line-height: 34px;
+	color: var(--gs-body);
+}
+
+.gs-hero .gs-hero__buttons {
+	margin-top: 36px;
+}
+
+/* ---------------------------------------------------------------------------
+ * The Gedeon Holding group — holding logo, connector lines, five company tiles.
+ * ------------------------------------------------------------------------ */
+
+.gs-group.gs-section {
+	padding: 72px 0;
+}
+
+.gs-group .gs-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.gs-group .gs-group__holding {
+	padding-top: 44px;
+}
+
+.gs-group .gs-group__holding img {
+	width: 194px;
+	height: auto;
+}
+
+.gs-group .gs-group__connectors {
+	width: 100%;
+	height: 64px;
+}
+
+.gs-group .gs-group__connectors img {
+	width: 100%;
+	max-width: none;
+	height: 67px;
+}
+
+.gs-group .gs-group__tiles {
+	display: grid;
+	grid-template-columns: repeat(5, minmax(0, 1fr));
+	gap: 19px;
+	width: 100%;
+}
+
+.gs-brand-tile {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 118px;
+	border: 1px solid var(--gs-border);
+	border-radius: 8px;
+	background: var(--gs-raised);
+}
+
+.gs-brand-tile.is-current {
+	border-color: var(--gs-red);
+	filter: drop-shadow(0 10px 14px rgba(214, 31, 54, 0.35));
+}
+
+.gs-brand-tile .gs-brand-tile__logo img {
+	width: 150px;
+	height: 37px;
+	object-fit: contain;
+}
+
+/* ---------------------------------------------------------------------------
+ * Our athletes — 721px athlete card beside the Future athletes card, 563 tall.
+ * ------------------------------------------------------------------------ */
+
+.gs-athletes .gs-athletes__cards {
+	display: grid;
+	grid-template-columns: 721fr 539fr;
+	gap: 20px;
+}
+
+.gs-athletes .gs-athletes__all {
+	margin-top: 32px;
+}
+
+.gs-card--athlete {
+	display: flex;
+	min-height: 563px;
+}
+
+.gs-card--athlete .gs-card__photo {
+	flex: 0 0 295px;
+}
+
+.gs-card--athlete .gs-card__photo img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.gs-card .gs-card__body {
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	justify-content: space-between;
+	min-width: 0;
+}
+
+.gs-card--athlete .gs-card__body {
+	padding: 34px 32px 32px;
+}
+
+.gs-card .gs-card__top {
+	display: flex;
+	flex-direction: column;
+}
+
+.gs-card .gs-card__name {
+	margin-top: 14px;
+	font-size: 36px;
+	line-height: 40px;
+}
+
+.gs-card .gs-card__meta {
+	margin-top: 4px;
+	font-size: 15.2px;
+	line-height: 23px;
+	color: var(--gs-muted);
+}
+
+.gs-card--athlete .gs-card__text {
+	margin-top: 14px;
+}
+
+.gs-facts {
+	margin-top: 14px;
+}
+
+.gs-facts .gs-facts__row {
+	display: grid;
+	grid-template-columns: 96px minmax(0, 1fr);
+	gap: 16px;
+	font-size: 15.2px;
+	line-height: 23px;
+}
+
+.gs-facts .gs-facts__row > * {
+	padding: 12px 0;
+	border-top: 1px solid var(--gs-border);
+}
+
+.gs-facts .gs-facts__row:last-child > * {
+	border-top: 0;
+}
+
+.gs-facts .gs-facts__label {
+	color: var(--gs-muted);
+}
+
+.gs-facts .gs-facts__value {
+	color: var(--gs-text);
+}
+
+.gs-card .gs-card__link {
+	margin-top: 16px;
+}
+
+.gs-card--future {
+	display: flex;
+	flex-direction: column;
+	border-style: dashed;
+	background: var(--gs-page);
+}
+
+.gs-card--future .gs-card__panel {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	aspect-ratio: 537 / 300;
+	background: radial-gradient(50% 50% at 50% 50%, #5c0a14 0%, #360e15 50%, #220f16 75%, #0f1116 100%);
+}
+
+.gs-card--future .gs-card__wordmark img {
+	width: 260px;
+	height: auto;
+}
+
+.gs-card--future .gs-card__body {
+	padding: 32px 40px;
+}
+
+.gs-card--future .gs-card__name {
+	margin-top: 12px;
+}
+
+.gs-card--future .gs-card__text {
+	margin-top: 12px;
+}
+
+/* ---------------------------------------------------------------------------
+ * Our approach — five steps on one track; the last segment is red.
+ * ------------------------------------------------------------------------ */
+
+.gs-approach .gs-steps {
+	display: grid;
+	grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.gs-step {
+	padding-right: 14px;
+}
+
+.gs-step:last-child {
+	padding-right: 0;
+}
+
+.gs-step .gs-step__number {
+	font-family: var(--gs-heading-font);
+	font-size: 15px;
+	font-weight: 700;
+	line-height: 18px;
+	letter-spacing: 1px;
+	color: var(--gs-red-accent);
+}
+
+.gs-step .gs-step__track {
+	position: relative;
+	height: 8px;
+	margin-top: 8px;
+	margin-right: 0;
+}
+
+.gs-step .gs-step__track::before {
+	content: "";
+	position: absolute;
+	top: 3.25px;
+	right: 8px;
+	left: 0;
+	height: 1.5px;
+	background: var(--gs-white-20);
+}
+
+.gs-step .gs-step__track::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	box-sizing: border-box;
+	width: 8px;
+	height: 8px;
+	border: 1.5px solid var(--gs-white-20);
+	border-radius: 50%;
+	background: var(--gs-surface);
+}
+
+.gs-step.is-final .gs-step__track::before {
+	background: var(--gs-red);
+}
+
+.gs-step.is-final .gs-step__track::after {
+	border: 0;
+	background: var(--gs-red);
+}
+
+.gs-step .gs-step__title {
+	margin-top: 17px;
+	font-size: 22.4px;
+	line-height: 26px;
+}
+
+.gs-step .gs-step__text {
+	margin-top: 6px;
+	font-size: 15.2px;
+	line-height: 23px;
+	color: var(--gs-muted);
+}
+
+.gs-approach .gs-note {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-top: 32px;
+	font-size: 15.2px;
+	line-height: 23px;
+	color: var(--gs-muted);
+}
+
+.gs-approach .gs-note::before {
+	content: "";
+	flex: 0 0 12px;
+	height: 12.6px;
+	background: url("../icons/icon-reinvest.svg") center / contain no-repeat;
+}
+
+.gs-approach .gs-approach__link {
+	margin-top: 32px;
+}
+
+/* ---------------------------------------------------------------------------
+ * Work with us — two 564-tall panels.
+ * ------------------------------------------------------------------------ */
+
+.gs-work .gs-panel {
+	min-height: 564px;
+}
+
+/* Figma breaks the investor copy short of the panel width. */
+@media (min-width: 1200px) {
+	.gs-work .gs-panel--investors .gs-panel__text {
+		max-width: 440px;
+	}
+
+	.gs-work .gs-panel--investors .gs-panel__risk {
+		padding-right: 80px;
+	}
+}
+
+/* ---------------------------------------------------------------------------
+ * Part of Gedeon Holding — 520px copy beside the 590px company list.
+ * ------------------------------------------------------------------------ */
+
+.gs-holding .gs-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 40px;
+}
+
+.gs-holding .gs-holding__copy {
+	flex: 0 1 520px;
+}
+
+.gs-holding .gs-title {
+	margin-top: 12px;
+}
+
+.gs-holding .gs-holding__text {
+	margin-top: 22px;
+	font-size: 21px;
+	line-height: 34px;
+	color: var(--gs-body);
+}
+
+.gs-holding .gs-holding__link {
+	margin-top: 30px;
+}
+
+.gs-companies {
+	flex: 0 1 590px;
+}
+
+.gs-companies .gs-companies__row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	min-height: 58px;
+	border-top: 1px solid var(--gs-border);
+}
+
+.gs-companies .gs-companies__name {
+	font-family: var(--gs-heading-font);
+	font-size: 20.8px;
+	font-weight: 700;
+	line-height: 24px;
+	color: var(--gs-text);
+	white-space: nowrap;
+}
+
+.gs-companies .gs-companies__text {
+	font-size: 15.2px;
+	line-height: 23px;
+	text-align: right;
+	color: var(--gs-muted);
+}
+
+.gs-companies .is-current > * {
+	color: var(--gs-red-accent);
+}
+
+/* ===========================================================================
+ * Tablet (below 1200px) — photo-first hero, 2-column cards.
+ * ======================================================================== */
+
+@media (max-width: 1199px) {
+	.gs-hero {
+		flex-direction: column;
+		align-items: stretch;
+		min-height: 0;
+		padding-top: 0;
+	}
+
+	.gs-hero .gs-hero__media {
+		position: relative;
+		inset: auto;
+		height: 372px;
+		overflow: hidden;
+	}
+
+	.gs-hero .gs-hero__image {
+		top: 0;
+		right: auto;
+		bottom: 0;
+		left: -30.77%;
+		width: 145.39%;
+	}
+
+	.gs-hero .gs-hero__media::before,
+	.gs-hero .gs-hero__media::after {
+		display: none;
+	}
+
+	.gs-hero .gs-hero__tag {
+		right: 17px;
+		bottom: 10px;
+	}
+
+	.gs-hero .gs-hero__copy {
+		max-width: none;
+		padding: 14px 0 57px;
+	}
+
+	.gs-hero .gs-hero__title {
+		margin-top: 16px;
+		font-size: 41px;
+		line-height: 44px;
+	}
+
+	.gs-hero .gs-hero__text {
+		max-width: 362px;
+		margin-top: 17px;
+		font-size: 19px;
+		line-height: 29px;
+	}
+
+	.gs-hero .gs-hero__buttons {
+		margin-top: 26px;
+	}
+
+	.gs-group.gs-section {
+		padding: 48px 0;
+	}
+
+	.gs-group .gs-group__holding {
+		padding: 28px 0 25px;
+	}
+
+	.gs-group .gs-group__holding img {
+		width: 148px;
+	}
+
+	.gs-group .gs-group__connectors {
+		display: none;
+	}
+
+	.gs-group .gs-group__tiles {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 24px;
+	}
+
+	.gs-brand-tile {
+		flex: 0 0 calc((100% - 48px) / 3);
+		height: 100px;
+	}
+
+	.gs-athletes .gs-athletes__cards {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		align-items: start;
+		gap: 24px;
+	}
+
+	.gs-athletes .gs-athletes__all .wp-block-button,
+	.gs-athletes .gs-athletes__all .wp-block-button__link {
+		width: 100%;
+	}
+
+	.gs-athletes .gs-athletes__all {
+		margin-top: 34px;
+	}
+
+	.gs-card--athlete {
+		flex-direction: column;
+		min-height: 0;
+	}
+
+	.gs-card--athlete .gs-card__photo {
+		flex: none;
+		height: 444px;
+	}
+
+	.gs-card--athlete .gs-card__body,
+	.gs-card--future .gs-card__body {
+		padding: 24px 24px 28px;
+	}
+
+	.gs-card .gs-card__name {
+		margin-top: 12px;
+		font-size: 27.5px;
+		line-height: 29px;
+	}
+
+	.gs-card .gs-card__meta {
+		margin-top: 2px;
+	}
+
+	.gs-card--athlete .gs-card__text {
+		margin-top: 16px;
+	}
+
+	.gs-facts .gs-facts__row {
+		grid-template-columns: 100px minmax(0, 1fr);
+		gap: 12px;
+		font-size: 13.2px;
+		line-height: 20px;
+	}
+
+	.gs-facts .gs-facts__row:last-child > * {
+		border-top: 1px solid var(--gs-border);
+	}
+
+	.gs-card .gs-card__link {
+		margin-top: 20px;
+	}
+
+	.gs-card--future .gs-card__name {
+		font-size: 36px;
+		line-height: 40px;
+	}
+
+	.gs-card--future .gs-card__text {
+		font-size: 15.4px;
+		line-height: 24px;
+	}
+
+	.gs-card--future .gs-card__link {
+		margin-top: 16px;
+	}
+
+	.gs-approach .gs-steps {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 25px;
+	}
+
+	.gs-approach .gs-note {
+		margin-top: 22px;
+	}
+
+	.gs-work .gs-panel {
+		min-height: 0;
+	}
+
+	.gs-holding.gs-section {
+		padding: 64px 0 56px;
+	}
+
+	.gs-holding .gs-container {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 36px;
+	}
+
+	.gs-holding .gs-holding__copy,
+	.gs-companies {
+		flex: none;
+	}
+
+	.gs-holding .gs-holding__text {
+		font-size: 17px;
+		line-height: 28px;
+	}
+
+	.gs-companies .gs-companies__row {
+		padding: 16px 0;
+	}
+
+	.gs-companies .gs-companies__name {
+		white-space: normal;
+	}
+
+	.gs-companies .gs-companies__text {
+		flex: 0 1 200px;
+		min-width: 0;
+		max-width: 200px;
+		font-size: 13.2px;
+		line-height: 20px;
+	}
+}
+
+/* ===========================================================================
+ * Mobile (below 768px).
+ * ======================================================================== */
+
+@media (max-width: 767px) {
+	.gs-hero .gs-hero__media {
+		height: 236px;
+	}
+
+	.gs-hero .gs-hero__copy {
+		padding: 14px 12px 57px 0;
+	}
+
+	.gs-group .gs-group__tiles {
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	.gs-brand-tile {
+		flex: none;
+		height: 90px;
+	}
+
+	.gs-athletes .gs-athletes__cards {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 20px;
+	}
+
+	.gs-hero > .gs-container {
+		width: var(--gs-container);
+		margin-inline: auto;
+	}
+
+	.gs-hero .gs-hero__copy {
+		padding-right: 0;
+	}
+
+}

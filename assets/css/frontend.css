@@ -1,0 +1,967 @@
+/*
+ * Gedeon Sports — global styles: tokens, base, container, header, footer and the shared
+ * components from the Figma "02 Components" page. Measurements from the 1920 desktop frames,
+ * the 768 tablet frames and the 390 mobile frames.
+ */
+
+:root {
+	--gs-page: #0b0c10;
+	--gs-surface: #111217;
+	--gs-raised: #16171c;
+	--gs-footer: #08090d;
+	--gs-border: #23262c;
+	--gs-red: #d51f35;
+	--gs-red-accent: #ff4a5e;
+	--gs-red-border: rgba(213, 31, 53, 0.3);
+	--gs-text: #f4f4f5;
+	--gs-body: #d5d5da;
+	--gs-muted: #9a9aa3;
+	--gs-white-28: rgba(255, 255, 255, 0.28);
+	--gs-white-20: rgba(255, 255, 255, 0.2);
+	--gs-white-12: rgba(255, 255, 255, 0.12);
+	--gs-dark-85: rgba(11, 12, 16, 0.85);
+	--gs-heading-font: "Titillium Web", ui-sans-serif, system-ui, sans-serif;
+	--gs-text-font: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+	/* Figma rule: container = clamp(1136px, 66.67vw, 1280px), never wider than the gutters allow. */
+	--gs-gutter: 32px;
+	--gs-container: min(clamp(1136px, 66.67vw, 1280px), calc(100vw - 2 * var(--gs-gutter)));
+	--gs-header-height: 72px;
+}
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 24px;
+}
+
+body {
+	margin: 0;
+	background: var(--gs-page);
+	color: var(--gs-body);
+	font-family: var(--gs-text-font);
+	-webkit-font-smoothing: antialiased;
+	overflow-x: clip;
+}
+
+:where(h1, h2, h3, h4, h5, h6, p, figure, ul, ol) {
+	margin: 0;
+}
+
+:where(.gs-main) img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.gs-container {
+	width: var(--gs-container);
+	margin-inline: auto;
+}
+
+.gs-br {
+	display: inline;
+}
+
+/* Line breaks used only by the mobile design. */
+.gs-br-m {
+	display: none;
+}
+
+:where(a, .wp-element-button, summary, button, input, select, textarea):focus-visible {
+	outline: 2px solid var(--gs-red-accent);
+	outline-offset: 3px;
+}
+
+/* ---------------------------------------------------------------------------
+ * Sections
+ * ------------------------------------------------------------------------ */
+
+.gs-section {
+	position: relative;
+	padding: 120px 0;
+	border-top: 1px solid var(--gs-border);
+	background: var(--gs-page);
+}
+
+.gs-section--surface {
+	background: var(--gs-surface);
+}
+
+/* ---------------------------------------------------------------------------
+ * Text: eyebrow, section heading
+ * ------------------------------------------------------------------------ */
+
+.gs-eyebrow {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	font-family: var(--gs-heading-font);
+	font-weight: 700;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+/* Long eyebrows wrap instead of running out of narrow boxes. */
+@media (max-width: 1199px) {
+	.gs-eyebrow {
+		white-space: normal;
+	}
+
+	.gs-card .gs-eyebrow--grey {
+		letter-spacing: 3px;
+	}
+}
+
+@media (max-width: 400px) {
+	.gs-eyebrow--grey {
+		letter-spacing: 3.5px;
+	}
+}
+
+.gs-eyebrow::before {
+	content: "";
+	flex: 0 0 24px;
+	height: 2px;
+	background: var(--gs-red);
+}
+
+.gs-eyebrow--grey {
+	font-size: 16.5px;
+	line-height: 20px;
+	letter-spacing: 5.25px;
+	color: var(--gs-muted);
+}
+
+.gs-eyebrow--red {
+	font-size: 13px;
+	line-height: 18px;
+	letter-spacing: 3px;
+	color: var(--gs-red-accent);
+}
+
+.gs-heading {
+	max-width: 780px;
+}
+
+.gs-title {
+	font-family: var(--gs-heading-font);
+	font-size: 51.5px;
+	font-weight: 700;
+	line-height: 52px;
+	color: var(--gs-text);
+}
+
+.gs-heading .gs-title {
+	margin-top: 12px;
+}
+
+.gs-intro {
+	margin-top: 22px;
+	font-size: 18.4px;
+	line-height: 29px;
+	color: var(--gs-muted);
+}
+
+.gs-heading + * {
+	margin-top: 60px;
+}
+
+/* ---------------------------------------------------------------------------
+ * Buttons: Primary (red pill), Secondary (outline), Link (red text + arrow), Small.
+ * ------------------------------------------------------------------------ */
+
+.gs-buttons.wp-block-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+}
+
+.gs-buttons .wp-block-button {
+	display: flex;
+}
+
+.gs-buttons .wp-block-button__link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 13px 26px;
+	border: 0;
+	border-radius: 999px;
+	background: var(--gs-red);
+	font-family: var(--gs-text-font);
+	font-size: 15.6px;
+	font-weight: 600;
+	line-height: 20px;
+	color: #fff;
+	white-space: nowrap;
+	transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.gs-buttons .wp-block-button__link:hover {
+	background: #b81a2d;
+}
+
+.gs-buttons .gs-btn--secondary .wp-block-button__link {
+	border: 1px solid var(--gs-white-28);
+	background: transparent;
+}
+
+.gs-buttons .gs-btn--secondary .wp-block-button__link:hover {
+	border-color: var(--gs-text);
+	background: transparent;
+}
+
+.gs-buttons .gs-btn--link .wp-block-button__link {
+	gap: 8px;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: none;
+	color: var(--gs-red-accent);
+}
+
+/* Text links: a 40px tap area on touch screens without changing the layout. */
+@media (max-width: 767px) {
+	.gs-buttons .gs-btn--link .wp-block-button__link {
+		padding-block: 10px;
+		margin-block: -10px;
+	}
+}
+
+.gs-buttons .gs-btn--link .wp-block-button__link::after {
+	content: "→";
+	transition: transform 0.2s ease;
+}
+
+.gs-buttons .gs-btn--link .wp-block-button__link:hover {
+	background: none;
+}
+
+.gs-buttons .gs-btn--link .wp-block-button__link:hover::after {
+	transform: translateX(3px);
+}
+
+.gs-btn--small .wp-block-button__link {
+	padding: 8px 18px;
+	border: 0;
+	border-radius: 999px;
+	background: var(--gs-red);
+	font-family: var(--gs-text-font);
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 20px;
+	color: #fff;
+}
+
+.gs-btn--small .wp-block-button__link:hover {
+	background: #b81a2d;
+}
+
+/* ---------------------------------------------------------------------------
+ * Tags, lists, cards, panels
+ * ------------------------------------------------------------------------ */
+
+.gs-tag {
+	align-self: flex-start;
+	width: fit-content;
+	font-size: 11px;
+	font-weight: 700;
+	line-height: 14px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.gs-tag--stage {
+	padding: 4px 12px;
+	border: 1px solid var(--gs-red-accent);
+	border-radius: 999px;
+	color: var(--gs-red-accent);
+}
+
+.gs-tag--concept {
+	padding: 4px 8px;
+	border: 1px solid var(--gs-white-20);
+	border-radius: 3px;
+	background: var(--gs-dark-85);
+	color: #fff;
+}
+
+.gs-list.wp-block-list {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 0;
+	list-style: none;
+}
+
+.gs-list li {
+	position: relative;
+	padding-left: 15px;
+	font-size: 15.4px;
+	line-height: 24px;
+	color: var(--gs-body);
+}
+
+.gs-list li::before {
+	content: "";
+	position: absolute;
+	top: 9px;
+	left: 0;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: var(--gs-red);
+}
+
+.gs-grid {
+	display: grid;
+	gap: 20px;
+}
+
+.gs-grid--2 {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.gs-grid--3 {
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.gs-card {
+	position: relative;
+	overflow: hidden;
+	border: 1px solid var(--gs-border);
+	border-radius: 8px;
+	background: var(--gs-raised);
+}
+
+.gs-card--feature {
+	padding: 32px;
+}
+
+.gs-card--feature::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 4px;
+	width: 54px;
+	height: 2.5px;
+	background: var(--gs-red);
+}
+
+.gs-card__number {
+	font-family: var(--gs-heading-font);
+	font-size: 15px;
+	font-weight: 700;
+	line-height: 18px;
+	letter-spacing: 1px;
+	color: var(--gs-red-accent);
+}
+
+.gs-card--feature .gs-card__title {
+	margin-top: 28px;
+	font-size: 27.5px;
+	line-height: 29px;
+}
+
+.gs-card__text {
+	font-size: 17px;
+	line-height: 28px;
+	color: var(--gs-muted);
+}
+
+.gs-card--feature .gs-card__text {
+	margin-top: 12px;
+}
+
+/* Panels (Work with us) */
+.gs-panel {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 24px;
+	padding: 40px;
+	border: 1px solid var(--gs-border);
+	border-radius: 8px;
+	background: var(--gs-raised);
+}
+
+.gs-panel--investors {
+	background: linear-gradient(138deg, rgba(107, 13, 26, 0.32) 14.3%, rgba(107, 13, 26, 0) 53.6%), var(--gs-raised);
+}
+
+.gs-panel__title {
+	margin-top: 14px;
+	font-size: 32px;
+	line-height: 33px;
+}
+
+.gs-panel__text {
+	margin-top: 16px;
+	font-size: 17px;
+	line-height: 28px;
+	color: var(--gs-muted);
+}
+
+.gs-panel .gs-list {
+	margin-top: 24px;
+}
+
+.gs-panel__risk {
+	margin-top: 16px;
+	padding-top: 16px;
+	border-top: 1px solid var(--gs-border);
+	font-size: 13.2px;
+	line-height: 20px;
+	color: var(--gs-muted);
+}
+
+/* CTA band */
+.gs-cta-section.gs-section {
+	padding: 72px 0;
+}
+
+.gs-cta {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 40px;
+	padding: 56px 64px;
+	border: 1px solid var(--gs-red-border);
+	border-radius: 10px;
+	background: linear-gradient(90deg, #330a12 0%, #170f14 55%, #13141a 100%);
+}
+
+.gs-cta__copy {
+	flex: 0 1 600px;
+}
+
+.gs-cta__title {
+	font-size: 51.5px;
+	line-height: 52px;
+}
+
+.gs-cta__text {
+	margin-top: 16px;
+	font-size: 17px;
+	line-height: 28px;
+	color: var(--gs-body);
+}
+
+.gs-cta__buttons {
+	margin-top: 40px;
+}
+
+.gs-cta__logo {
+	display: flex;
+	align-items: center;
+	gap: 56px;
+	flex-shrink: 0;
+}
+
+.gs-cta__logo::before {
+	content: "";
+	width: 1px;
+	height: 72px;
+	background: var(--gs-white-12);
+}
+
+.gs-cta__logo img {
+	width: 262px;
+	height: auto;
+}
+
+/* ---------------------------------------------------------------------------
+ * Header — 72 tall; logo 180 wide; navigation 26 apart, 40 before the Enquire button.
+ * ------------------------------------------------------------------------ */
+
+.gs-header {
+	position: relative;
+	z-index: 50;
+	background: var(--gs-page);
+}
+
+.gs-header .gs-header__inner {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+	height: var(--gs-header-height);
+}
+
+.gs-header .gs-header__logo {
+	margin-right: auto;
+}
+
+.gs-header .gs-header__logo a,
+.gs-header .gs-header__logo img {
+	display: block;
+}
+
+.gs-header .gs-header__logo img {
+	width: 180px;
+	height: auto;
+}
+
+.gs-header nav.gs-header__nav {
+	font-size: 15.2px;
+	line-height: 20px;
+	color: var(--gs-muted);
+}
+
+.gs-header .gs-header__nav .wp-block-navigation__container {
+	gap: 26px;
+}
+
+.gs-header .gs-header__nav .wp-block-navigation-item__content {
+	position: relative;
+	padding: 0 0 8px;
+	color: var(--gs-muted);
+	transition: color 0.2s ease;
+}
+
+/* Underline 2px red under the active page, 6px below the label. */
+.gs-header .gs-header__nav .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content::after {
+	content: "";
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 2px;
+	background: var(--gs-red-accent);
+	opacity: 0;
+	transition: opacity 0.2s ease;
+}
+
+.gs-header .gs-header__nav .wp-block-navigation-item__content:hover,
+.gs-header .gs-header__nav .current-menu-item > .wp-block-navigation-item__content,
+.gs-header .gs-header__nav [aria-current="page"] {
+	color: #fff;
+}
+
+.gs-header .gs-header__nav .current-menu-item > .wp-block-navigation-item__content::after,
+.gs-header .gs-header__nav .wp-block-navigation__container > .wp-block-navigation-item > [aria-current="page"]::after {
+	opacity: 1;
+}
+
+.gs-header .gs-header__nav .wp-block-navigation__submenu-icon {
+	width: 10px;
+	height: 6px;
+	margin: 0 0 8px 6px;
+	color: var(--gs-muted);
+}
+
+.gs-header .gs-header__nav .wp-block-navigation__submenu-icon svg {
+	width: 10px;
+	height: 6px;
+	stroke: currentColor;
+}
+
+.gs-header .gs-header__nav .wp-block-navigation__submenu-container {
+	min-width: 220px;
+	padding: 8px 0;
+	border: 1px solid var(--gs-border) !important;
+	border-radius: 8px;
+	background: var(--gs-raised) !important;
+}
+
+.gs-header .gs-header__nav .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+	padding: 10px 18px;
+}
+
+.gs-header .gs-header__cta {
+	flex-shrink: 0;
+}
+
+/* Menu pill (opens the overlay below 1200px). */
+.gs-header .wp-block-navigation__responsive-container-open {
+	display: none;
+	align-items: center;
+	gap: 8px;
+	height: 40px;
+	padding: 0 20px 0 18px;
+	border: 1px solid var(--gs-white-28);
+	border-radius: 999px;
+	font-family: var(--gs-text-font);
+	font-size: 15.6px;
+	font-weight: 600;
+	line-height: 20px;
+	color: var(--gs-text);
+}
+
+.gs-header .wp-block-navigation__responsive-container-open svg {
+	display: none;
+}
+
+.gs-header .wp-block-navigation__responsive-container-open::before {
+	content: "";
+	width: 14px;
+	height: 10px;
+	background:
+		linear-gradient(currentColor, currentColor) 0 0 / 100% 1.8px no-repeat,
+		linear-gradient(currentColor, currentColor) 0 50% / 100% 1.8px no-repeat,
+		linear-gradient(currentColor, currentColor) 0 100% / 100% 1.8px no-repeat;
+}
+
+.gs-header .wp-block-navigation__responsive-container-open::after {
+	content: "Menu";
+}
+
+.gs-header .wp-block-navigation__responsive-container.is-menu-open {
+	padding: 20px var(--gs-gutter) 40px;
+	background: var(--gs-page) !important;
+}
+
+.gs-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content {
+	padding-top: 56px;
+}
+
+.gs-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container {
+	gap: 18px;
+	font-family: var(--gs-heading-font);
+	font-size: 26px;
+	font-weight: 700;
+	line-height: 32px;
+}
+
+.gs-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content {
+	padding: 0;
+	color: var(--gs-text);
+}
+
+.gs-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container {
+	gap: 12px;
+	padding: 12px 0 4px 18px !important;
+	border: 0 !important;
+	background: none !important;
+	font-family: var(--gs-text-font);
+	font-size: 17px;
+	font-weight: 400;
+	line-height: 24px;
+}
+
+.gs-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+	padding: 0;
+	color: var(--gs-muted);
+}
+
+.gs-header .wp-block-navigation__responsive-container-close {
+	top: 22px;
+	right: var(--gs-gutter);
+	color: var(--gs-text);
+}
+
+/* ---------------------------------------------------------------------------
+ * Footer — brand 442, Pages 293, Gedeon Exclusive 292, Company & Policies 253.
+ * ------------------------------------------------------------------------ */
+
+.gs-footer {
+	padding: 72px 0 20px;
+	border-top: 1px solid var(--gs-border);
+	background: var(--gs-footer);
+}
+
+.gs-footer .gs-footer__columns {
+	display: grid;
+	grid-template-columns: 442fr 293fr 292fr 253fr;
+}
+
+.gs-footer .gs-footer__logo img {
+	width: 180px;
+	height: auto;
+}
+
+.gs-footer .gs-footer__about {
+	max-width: 381px;
+	margin-top: 20px;
+	font-size: 15.2px;
+	line-height: 20px;
+	color: var(--gs-muted);
+}
+
+.gs-footer .gs-footer__heading {
+	font-family: var(--gs-heading-font);
+	font-size: 12px;
+	line-height: 16px;
+	letter-spacing: 3.25px;
+	text-transform: uppercase;
+	color: var(--gs-text);
+}
+
+.gs-footer .gs-footer__links {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	margin-top: 17px;
+	padding: 0;
+	list-style: none;
+	font-size: 15.2px;
+	line-height: 20px;
+}
+
+.gs-footer .gs-footer__links a {
+	color: var(--gs-body);
+	transition: color 0.2s ease;
+}
+
+.gs-footer .gs-footer__links a:hover {
+	color: #fff;
+}
+
+.gs-footer .gs-footer__legal {
+	max-width: 965px;
+	margin-top: 50px;
+	padding-top: 28px;
+	border-top: 1px solid var(--gs-border);
+	font-size: 13.2px;
+	line-height: 20px;
+	color: var(--gs-muted);
+}
+
+.gs-footer .gs-footer__bottom {
+	display: flex;
+	justify-content: space-between;
+	gap: 16px;
+	margin-top: 20px;
+	font-size: 13.2px;
+	line-height: 20px;
+	color: var(--gs-muted);
+}
+
+/* ===========================================================================
+ * Below 1200px: menu overlay and tablet layout (Figma tablet frames, 768).
+ * ======================================================================== */
+
+@media (max-width: 1199px) {
+	:root {
+		--gs-container: calc(100vw - 2 * var(--gs-gutter));
+		--gs-header-height: 64px;
+	}
+
+	.gs-header {
+		box-shadow: inset 0 -1px 0 var(--gs-border);
+	}
+
+	.gs-header .gs-header__cta {
+		display: none;
+	}
+
+	.gs-header .wp-block-navigation__responsive-container-open:not(.always-shown) {
+		display: inline-flex;
+	}
+
+	.gs-header .wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) {
+		display: none;
+	}
+
+	.gs-header .gs-header__logo img {
+		width: 182px;
+	}
+
+	.gs-section {
+		padding: 64px 0;
+	}
+
+	.gs-heading {
+		max-width: none;
+	}
+
+	/* Tablet and mobile share the mobile heading size and line breaks. */
+	.gs-br {
+		display: none;
+	}
+
+	.gs-br-m {
+		display: inline;
+	}
+
+	.gs-title {
+		font-size: 31.5px;
+		line-height: 32px;
+	}
+
+	.gs-heading + * {
+		margin-top: 34px;
+	}
+
+	.gs-grid {
+		gap: 24px;
+	}
+
+	.gs-grid--3 {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.gs-card--feature {
+		padding: 20px 24px 18px;
+	}
+
+	.gs-card--feature .gs-card__title {
+		margin-top: 25px;
+		font-size: 22.4px;
+		line-height: 26px;
+	}
+
+	.gs-card--feature .gs-card__text {
+		margin-top: 7px;
+		font-size: 15.2px;
+		line-height: 27px;
+	}
+
+	.gs-panel {
+		padding: 28px 24px;
+	}
+
+	.gs-panel__title {
+		font-size: 22.4px;
+		line-height: 26px;
+	}
+
+	.gs-panel__text {
+		font-size: 15.4px;
+		line-height: 24px;
+	}
+
+	.gs-panel .gs-buttons {
+		flex-direction: column;
+	}
+
+	.gs-panel .gs-buttons .wp-block-button,
+	.gs-panel .gs-buttons .wp-block-button__link {
+		width: 100%;
+	}
+
+	.gs-cta-section.gs-section {
+		padding: 55px 0 53px;
+	}
+
+	.gs-cta {
+		flex-direction: column-reverse;
+		align-items: flex-start;
+		gap: 0;
+		padding: 32px 28px;
+		border-radius: 8px;
+		background: linear-gradient(135deg, rgba(107, 13, 26, 0.55) 14.3%, rgba(107, 13, 26, 0) 64.3%), var(--gs-raised);
+	}
+
+	.gs-cta__copy {
+		flex: none;
+		width: 100%;
+	}
+
+	.gs-cta__logo {
+		flex-direction: column-reverse;
+		align-items: flex-start;
+		gap: 22px;
+		width: 100%;
+		padding-bottom: 22px;
+	}
+
+	.gs-cta__logo::before {
+		width: 100%;
+		height: 1px;
+	}
+
+	.gs-cta__logo img {
+		width: 160px;
+	}
+
+	.gs-cta__title {
+		font-size: 31.5px;
+		line-height: 32px;
+	}
+
+	.gs-cta__text {
+		margin-top: 12px;
+	}
+
+	.gs-cta__buttons.gs-buttons {
+		flex-direction: column;
+		margin-top: 24px;
+	}
+
+	.gs-cta__buttons .wp-block-button,
+	.gs-cta__buttons .wp-block-button__link {
+		width: 100%;
+	}
+
+	.gs-footer {
+		padding: 70px 0 40px;
+	}
+
+	.gs-footer .gs-footer__columns {
+		grid-template-columns: 180px 180px 200px;
+		column-gap: 40px;
+		row-gap: 59px;
+	}
+
+	.gs-footer .gs-footer__brand {
+		grid-column: 1 / -1;
+	}
+
+	.gs-footer .gs-footer__about {
+		max-width: 460px;
+		margin-top: 16px;
+		line-height: 23px;
+		color: var(--gs-body);
+	}
+
+	.gs-footer .gs-footer__links {
+		gap: 15px;
+	}
+
+	.gs-footer .gs-footer__legal {
+		max-width: none;
+		margin-top: 56px;
+		padding: 0 0 9px;
+		border-top: 0;
+	}
+
+	.gs-footer .gs-footer__bottom {
+		flex-direction: column;
+		gap: 14px;
+		margin-top: 14px;
+	}
+}
+
+/* ===========================================================================
+ * Mobile (below 768px) — Figma mobile frames, 390 with 16px gutters.
+ * ======================================================================== */
+
+@media (max-width: 767px) {
+	:root {
+		--gs-gutter: 16px;
+	}
+
+	.gs-grid--2,
+	.gs-grid--3 {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 20px;
+	}
+
+	.gs-panels.gs-grid {
+		gap: 24px;
+	}
+
+	.gs-cta .gs-buttons,
+	.gs-cta .gs-buttons .wp-block-button,
+	.gs-cta .gs-buttons .wp-block-button__link {
+		width: 100%;
+	}
+
+	.gs-footer .gs-footer__columns {
+		grid-template-columns: 199fr 159fr;
+		column-gap: 0;
+		row-gap: 39px;
+	}
+
+	.gs-footer .gs-footer__brand {
+		margin-bottom: 20px;
+	}
+
+	/* Company & Policies sits below, 150px wide as in the Figma mobile footer. */
+	.gs-footer .gs-footer__col:last-child {
+		grid-column: 1 / -1;
+		max-width: 150px;
+	}
+
+}

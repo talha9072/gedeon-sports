@@ -1,0 +1,256 @@
+/*
+ * Gedeon Sports — Gedeon Exclusive pages (Exclusive, Track & Events, Concierge, Club).
+ * Measurements from "Exclusive / Desktop / Working" (1920), tablet (768) and mobile (390).
+ */
+
+/* Page Hero / Image — 760 tall; 1400px photo anchored right; copy 208px down. */
+.gs-hero--right {
+	align-items: flex-start;
+	min-height: 760px;
+	padding-top: 208px;
+	box-sizing: border-box;
+}
+
+.gs-hero--right .gs-hero__image {
+	width: 72.92%;
+}
+
+.gs-hero--right .gs-hero__title {
+	margin-top: 22px;
+	font-size: 66.5px;
+	line-height: 70px;
+}
+
+.gs-hero--right .gs-hero__text {
+	margin-top: 24px;
+}
+
+/* Service, region and activity cards with a link under the text. */
+.gs-services .gs-card--image .gs-card__text {
+	margin-top: 24px;
+}
+
+.gs-card--image .gs-card__link {
+	margin-top: 24px;
+}
+
+.gs-regions .gs-card--image .gs-card__body {
+	padding-bottom: 28px;
+}
+
+.gs-services .gs-card--image,
+.gs-regions .gs-card--image {
+	min-height: 0;
+}
+
+@media (min-width: 1200px) {
+	.gs-services .gs-card__text,
+	.gs-regions .gs-card__text {
+		max-width: 310px;
+	}
+}
+
+.gs-regions-section.gs-section {
+	padding-bottom: 124px;
+}
+
+/* Photo beside copy (Closer to the racing). */
+.gs-photo {
+	position: relative;
+	overflow: hidden;
+	border: 1px solid var(--gs-border);
+	border-radius: 8px;
+	background: var(--gs-raised);
+}
+
+.gs-photo .gs-photo__image img {
+	width: 100%;
+	height: 442.5px;
+	object-fit: cover;
+}
+
+.gs-photo .gs-photo__tag {
+	position: absolute;
+	right: 11px;
+	bottom: 11px;
+}
+
+.gs-racing.gs-section {
+	padding: 122px 0 121px;
+}
+
+.gs-racing .gs-split__lead {
+	margin-top: 22px;
+}
+
+/* Track & Events — format cards, "Everything arranged" list, partners split. */
+.gs-formats .gs-card--image {
+	min-height: 0;
+}
+
+.gs-formats .gs-card--image .gs-card__text {
+	max-width: none;
+}
+
+.gs-included-section.gs-section {
+	padding: 120px 0 138px;
+}
+
+.gs-list.gs-included {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 273px));
+	gap: 9px 0;
+	margin-top: 22px;
+}
+
+/* Concierge — shorter hero copy sits lower; "Discreet by design" copy top-aligned 80px down. */
+@media (min-width: 1200px) {
+	.gs-hero--right.gs-hero--short {
+		padding-top: 345px;
+	}
+
+	.gs-hero--right.gs-hero--club {
+		padding-top: 275px;
+	}
+
+	.gs-benefits .gs-card--image {
+		min-height: 388px;
+	}
+
+	.gs-join.gs-grid {
+		gap: 14px;
+	}
+
+	.gs-discretion.gs-section {
+		padding: 123px 0 122px;
+	}
+
+	.gs-discretion .gs-split__copy {
+		flex-basis: 540px;
+		padding-top: 80px;
+	}
+
+	.gs-discretion .gs-photo .gs-photo__image img {
+		height: 440.5px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.gs-included-section .gs-split__copy {
+		flex-basis: 560px;
+	}
+
+	.gs-split--media-left .gs-split__copy {
+		flex-basis: 590px;
+	}
+
+	.gs-included-section .gs-photo .gs-photo__image img {
+		height: 440.5px;
+	}
+
+	.gs-split--media-left .gs-photo .gs-photo__image img {
+		height: 439.4px;
+	}
+}
+
+/* ===========================================================================
+ * Tablet (below 1200px)
+ * ======================================================================== */
+
+@media (max-width: 1199px) {
+	.gs-hero--right {
+		min-height: 0;
+		padding-top: 0;
+	}
+
+	.gs-hero--right .gs-hero__media {
+		align-self: stretch;
+		width: 100%;
+	}
+
+	.gs-hero--right .gs-hero__image {
+		width: 100%;
+		left: 0;
+	}
+
+	.gs-hero--right .gs-hero__title {
+		margin-top: 16px;
+		font-size: 41px;
+		line-height: 44px;
+	}
+
+	.gs-hero--right .gs-hero__text {
+		margin-top: 17px;
+	}
+
+	.gs-regions-section.gs-section,
+	.gs-included-section.gs-section,
+	.gs-racing.gs-section {
+		padding: 64px 0;
+	}
+
+	.gs-photo .gs-photo__image img {
+		height: auto;
+		aspect-ratio: 4 / 3;
+	}
+
+	/* Track & Events tablet: single-column list, stacked steps, 704 × 452 photos. */
+	.gs-included-section.gs-section {
+		padding: 64px 0 49px;
+	}
+
+	.gs-included-section .gs-container,
+	.gs-discretion .gs-container,
+	.gs-split--media-left .gs-container {
+		gap: 34px;
+	}
+
+	.gs-list.gs-included {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 12.5px;
+	}
+
+	.gs-included-section .gs-photo .gs-photo__image img,
+	.gs-discretion .gs-photo .gs-photo__image img,
+	.gs-split--media-left .gs-photo .gs-photo__image img {
+		aspect-ratio: 704 / 452;
+	}
+
+	.gs-included-section .gs-split__lead,
+	.gs-discretion .gs-split__lead,
+	.gs-split--media-left .gs-split__lead {
+		font-size: 16px;
+		line-height: 26px;
+	}
+
+	.gs-track-how .gs-process.gs-grid {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 16px;
+	}
+
+	.gs-services.gs-grid,
+	.gs-regions.gs-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+/* ===========================================================================
+ * Mobile (below 768px)
+ * ======================================================================== */
+
+@media (max-width: 767px) {
+	.gs-services.gs-grid,
+	.gs-regions.gs-grid,
+	.gs-formats.gs-grid {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.gs-list.gs-included {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.gs-hero--right .gs-hero__buttons .wp-block-button,
+	.gs-hero--right .gs-hero__buttons .wp-block-button__link {
+		width: 100%;
+	}
+}
