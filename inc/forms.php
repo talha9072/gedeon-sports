@@ -104,6 +104,7 @@ function gedeon_sports_form_shortcode($atts = array()): string
 
     return '<form class="gs-form gs-form--' . esc_attr($key) . '" method="post" action="' . esc_url(admin_url('admin-post.php')) . '">'
         . ($form['title'] ? '<h3 class="gs-form__title">' . esc_html($form['title']) . '</h3>' : '')
+        . (isset($_GET['form-error']) && $key === sanitize_key(wp_unslash($_GET['form-error'])) ? '<p class="gs-form__error" role="alert">' . esc_html__('Please complete the required fields and try again.', 'gedeon-sports') . '</p>' : '') // phpcs:ignore WordPress.Security.NonceVerification -- display only.
         . '<div class="gs-form__fields">' . $rows . '</div>'
         . '<p class="gs-form__trap" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></p>'
         . '<input type="hidden" name="action" value="gedeon_sports_form">'
@@ -147,7 +148,8 @@ function gedeon_sports_handle_form(): void
             $value = 'yes' === $value ? 'yes' : '';
         }
         if (! empty($field[3]) && '' === $value) {
-            wp_safe_redirect(add_query_arg('form-error', $key, wp_get_referer() ?: home_url('/')));
+            $back = remove_query_arg('form-error', strtok((string) (wp_get_referer() ?: home_url('/')), '#'));
+            wp_safe_redirect(add_query_arg('form-error', $key, $back) . ('contact' === $key ? '#contact' : '#request-access'));
             exit;
         }
         $lines[] = ('consent' === $field[1] ? __('Consent', 'gedeon-sports') : $field[0]) . ': ' . $value;

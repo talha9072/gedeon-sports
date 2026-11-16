@@ -1,0 +1,169 @@
+/*
+ * Gedeon Sports — per-page section spacing on mobile and tablet, measured from the Figma 05 Mobile and
+ * 04 Tablet frames (the mobile frames follow the client screenshots, so section spacing is not uniform).
+ * Generated from the Figma metadata; selectors use the gs-page-{slug} body class.
+ */
+
+/* Mobile (390) section spacing measured from the Figma mobile frames. */
+@media (max-width: 767px) {
+	/* Our Athletes */
+	body.gs-page-our-athletes main .wp-block-post-content > :nth-child(4) { padding-bottom: 110px; } /* Future athletes */
+	body.gs-page-our-athletes main .wp-block-post-content > :nth-child(5) { padding-top: 53px; padding-bottom: 50px; } /* Partner with our athletes */
+
+	/* Our Approach */
+	body.gs-page-our-approach main .wp-block-post-content > :nth-child(2) { padding-bottom: 54px; } /* Operating cycle */
+	body.gs-page-our-approach main .wp-block-post-content > :nth-child(4) { padding-bottom: 67px; } /* Stage gates */
+	body.gs-page-our-approach main .wp-block-post-content > :nth-child(5) { padding-bottom: 75px; } /* Workstreams */
+	body.gs-page-our-approach main .wp-block-post-content > :nth-child(8) { padding-top: 52px; padding-bottom: 50px; } /* Meet our athletes */
+
+	/* Investors */
+	body.gs-page-investors main .wp-block-post-content > :nth-child(2) { padding-bottom: 63px; } /* Two ways to invest */
+	body.gs-page-investors main .wp-block-post-content > :nth-child(3) { padding-bottom: 83px; } /* How value is created */
+	body.gs-page-investors main .wp-block-post-content > :nth-child(4) { padding-bottom: 45px; } /* What the companies hold */
+	body.gs-page-investors main .wp-block-post-content > :nth-child(5) { padding-bottom: 61px; } /* Portfolio approach */
+	body.gs-page-investors main .wp-block-post-content > :nth-child(6) { padding-bottom: 74px; } /* Backed by Gedeon Holding */
+	body.gs-page-investors main .wp-block-post-content > :nth-child(7) { padding-bottom: 74px; } /* Team and advisers */
+	body.gs-page-investors main .wp-block-post-content > :nth-child(8) { padding-bottom: 73px; } /* Governance */
+	body.gs-page-investors main .wp-block-post-content > :nth-child(9) { padding-bottom: 47px; } /* Key risks */
+	body.gs-page-investors main .wp-block-post-content > :nth-child(10) { padding-top: 52px; padding-bottom: 57px; } /* Request investor access */
+
+	/* Investor Area */
+
+	/* Partnerships */
+	body.gs-page-partnerships main .wp-block-post-content > :nth-child(2) { padding-bottom: 51px; } /* Packages */
+	body.gs-page-partnerships main .wp-block-post-content > :nth-child(3) { padding-bottom: 102px; } /* Partnership activities */
+	body.gs-page-partnerships main .wp-block-post-content > :nth-child(4) { padding-bottom: 85px; } /* Branding placements */
+	body.gs-page-partnerships main .wp-block-post-content > :nth-child(5) { padding-bottom: 31px; } /* Measurement */
+	body.gs-page-partnerships main .wp-block-post-content > :nth-child(6) { padding-bottom: 47px; } /* Impact */
+	body.gs-page-partnerships main .wp-block-post-content > :nth-child(7) { padding-bottom: 48px; } /* Process */
+	body.gs-page-partnerships main .wp-block-post-content > :nth-child(8) { padding-top: 52px; padding-bottom: 55px; } /* Start a partnership conversation */
+
+	/* Exclusive */
+	body.gs-page-exclusive main .wp-block-post-content > :nth-child(2) { padding-bottom: 82px; } /* Services */
+	body.gs-page-exclusive main .wp-block-post-content > :nth-child(3) { padding-bottom: 52px; } /* How we work */
+	body.gs-page-exclusive main .wp-block-post-content > :nth-child(4) { padding-bottom: 86px; } /* Where */
+	body.gs-page-exclusive main .wp-block-post-content > :nth-child(5) { padding-bottom: 133px; } /* Closer to the racing */
+	body.gs-page-exclusive main .wp-block-post-content > :nth-child(6) { padding-top: 52px; padding-bottom: 58px; } /* Tell us what you have in mind */
+
+	/* Track & Events */
+	body.gs-page-track-and-events main .wp-block-post-content > :nth-child(2) { padding-bottom: 70px; } /* Formats */
+	body.gs-page-track-and-events main .wp-block-post-content > :nth-child(4) { padding-bottom: 53px; } /* How it works */
+	body.gs-page-track-and-events main .wp-block-post-content > :nth-child(5) { padding-bottom: 131px; } /* For partners */
+	body.gs-page-track-and-events main .wp-block-post-content > :nth-child(6) { padding-top: 52px; padding-bottom: 56px; } /* Plan your event */
+
+	/* Concierge */
+	body.gs-page-concierge main .wp-block-post-content > :nth-child(2) { padding-bottom: 66px; } /* Services */
+	body.gs-page-concierge main .wp-block-post-content > :nth-child(3) { padding-bottom: 45px; } /* How it works */
+	body.gs-page-concierge main .wp-block-post-content > :nth-child(5) { padding-top: 53px; padding-bottom: 36px; } /* Arrange a consultation */
+
+	/* Club */
+	body.gs-page-club main .wp-block-post-content > :nth-child(2) { padding-bottom: 154px; } /* Membership */
+	body.gs-page-club main .wp-block-post-content > :nth-child(3) { padding-bottom: 54px; } /* The season */
+	body.gs-page-club main .wp-block-post-content > :nth-child(5) { padding-top: 53px; padding-bottom: 47px; } /* Apply for membership */
+
+	/* About & Contact */
+	body.gs-page-about-contact main .wp-block-post-content > :nth-child(2) { padding-bottom: 129px; } /* Leadership */
+	body.gs-page-about-contact main .wp-block-post-content > :nth-child(3) { padding-bottom: 16px; } /* Part of Gedeon Holding */
+	body.gs-page-about-contact main .wp-block-post-content > :nth-child(4) { padding-bottom: 203px; } /* Accountability */
+	body.gs-page-about-contact main .wp-block-post-content > :nth-child(5) { padding-bottom: 16px; } /* Policies */
+	body.gs-page-about-contact main .wp-block-post-content > :nth-child(6) { padding-bottom: 297px; } /* Company information */
+	body.gs-page-about-contact main .wp-block-post-content > :nth-child(7) { padding-bottom: 140px; } /* Contact */
+
+	/* Template / Blog */
+	body.blog main > :nth-child(3) { padding-top: 52px; padding-bottom: 50px; } /* Speak to us */
+
+	/* Template / Category */
+	body.category main > :nth-child(3) { padding-top: 52px; padding-bottom: 50px; } /* Speak to us */
+
+	/* Template / Search Results */
+	body.search main > :nth-child(3) { padding-top: 52px; padding-bottom: 50px; } /* Speak to us */
+
+	/* Template / Single Post – Wide */
+	body.single-post main > :nth-child(3) { padding-top: 48px; } /* Related articles */
+	body.single-post main > :nth-child(4) { padding-top: 52px; padding-bottom: 50px; } /* Speak to us */
+
+	/* Policy / Privacy Policy */
+	body.gs-page-privacy-policy main > :nth-child(1) { padding-top: 49px; padding-bottom: 64px; } /* Page title */
+
+	/* Policy / Company Information */
+	body.gs-page-company-information main > :nth-child(1) { padding-top: 49px; padding-bottom: 64px; } /* Page title */
+
+	/* Policy / Safeguarding Policy */
+	body.gs-page-safeguarding-policy main > :nth-child(1) { padding-top: 49px; padding-bottom: 64px; } /* Page title */
+
+	/* Policy / Conflicts of Interest Policy */
+	body.gs-page-conflicts-of-interest-policy main > :nth-child(1) { padding-top: 49px; padding-bottom: 64px; } /* Page title */
+}
+
+
+/* Tablet (768) section spacing measured from the Figma tablet frames. */
+@media (min-width: 768px) and (max-width: 1199px) {
+	/* Our Athletes */
+	body.gs-page-our-athletes main .wp-block-post-content > :nth-child(5) { padding-top: 53px; padding-bottom: 50px; } /* Partner with our athletes */
+	body.gs-page-our-athletes main .wp-block-post-content > :nth-child(4) { padding-bottom: 110px; } /* Future athletes */
+
+	/* Our Approach */
+	body.gs-page-our-approach main .wp-block-post-content > :nth-child(2) { padding-bottom: 54px; } /* Operating cycle */
+	body.gs-page-our-approach main .wp-block-post-content > :nth-child(4) { padding-bottom: 67px; } /* Stage gates */
+	body.gs-page-our-approach main .wp-block-post-content > :nth-child(5) { padding-bottom: 75px; } /* Workstreams */
+	body.gs-page-our-approach main .wp-block-post-content > :nth-child(8) { padding-top: 52px; padding-bottom: 50px; } /* Meet our athletes */
+
+	/* Investors */
+	body.gs-page-investors main .wp-block-post-content > :nth-child(2) { padding-bottom: 63px; } /* Two ways to invest */
+	body.gs-page-investors main .wp-block-post-content > :nth-child(3) { padding-bottom: 83px; } /* How value is created */
+	body.gs-page-investors main .wp-block-post-content > :nth-child(4) { padding-bottom: 45px; } /* What the companies hold */
+	body.gs-page-investors main .wp-block-post-content > :nth-child(5) { padding-bottom: 61px; } /* Portfolio approach */
+	body.gs-page-investors main .wp-block-post-content > :nth-child(7) { padding-bottom: 74px; } /* Team and advisers */
+	body.gs-page-investors main .wp-block-post-content > :nth-child(8) { padding-bottom: 73px; } /* Governance */
+	body.gs-page-investors main .wp-block-post-content > :nth-child(9) { padding-bottom: 47px; } /* Key risks */
+	body.gs-page-investors main .wp-block-post-content > :nth-child(10) { padding-top: 52px; padding-bottom: 57px; } /* Request investor access */
+
+	/* Investor Area */
+
+	/* Partnerships */
+	body.gs-page-partnerships main .wp-block-post-content > :nth-child(2) { padding-bottom: 51px; } /* Packages */
+	body.gs-page-partnerships main .wp-block-post-content > :nth-child(4) { padding-bottom: 85px; } /* Branding placements */
+	body.gs-page-partnerships main .wp-block-post-content > :nth-child(3) { padding-bottom: 102px; } /* Partnership activities */
+	body.gs-page-partnerships main .wp-block-post-content > :nth-child(5) { padding-bottom: 31px; } /* Measurement */
+	body.gs-page-partnerships main .wp-block-post-content > :nth-child(6) { padding-bottom: 47px; } /* Impact */
+	body.gs-page-partnerships main .wp-block-post-content > :nth-child(7) { padding-bottom: 48px; } /* Process */
+	body.gs-page-partnerships main .wp-block-post-content > :nth-child(8) { padding-top: 52px; padding-bottom: 55px; } /* Start a partnership conversation */
+
+	/* Exclusive */
+	body.gs-page-exclusive main .wp-block-post-content > :nth-child(2) { padding-bottom: 82px; } /* Services */
+	body.gs-page-exclusive main .wp-block-post-content > :nth-child(3) { padding-bottom: 52px; } /* How we work */
+	body.gs-page-exclusive main .wp-block-post-content > :nth-child(4) { padding-bottom: 86px; } /* Where */
+	body.gs-page-exclusive main .wp-block-post-content > :nth-child(6) { padding-top: 52px; padding-bottom: 58px; } /* Tell us what you have in mind */
+
+	/* Track & Events */
+	body.gs-page-track-and-events main .wp-block-post-content > :nth-child(2) { padding-bottom: 70px; } /* Formats */
+	body.gs-page-track-and-events main .wp-block-post-content > :nth-child(4) { padding-bottom: 53px; } /* How it works */
+	body.gs-page-track-and-events main .wp-block-post-content > :nth-child(6) { padding-top: 52px; padding-bottom: 56px; } /* Plan your event */
+
+	/* Concierge */
+	body.gs-page-concierge main .wp-block-post-content > :nth-child(2) { padding-bottom: 66px; } /* Services */
+	body.gs-page-concierge main .wp-block-post-content > :nth-child(3) { padding-bottom: 45px; } /* How it works */
+	body.gs-page-concierge main .wp-block-post-content > :nth-child(5) { padding-top: 53px; padding-bottom: 36px; } /* Arrange a consultation */
+
+	/* Club */
+	body.gs-page-club main .wp-block-post-content > :nth-child(3) { padding-bottom: 54px; } /* The season */
+	body.gs-page-club main .wp-block-post-content > :nth-child(5) { padding-top: 53px; padding-bottom: 47px; } /* Apply for membership */
+
+	/* About & Contact */
+	body.gs-page-about-contact main .wp-block-post-content > :nth-child(3) { padding-bottom: 16px; } /* Part of Gedeon Holding */
+	body.gs-page-about-contact main .wp-block-post-content > :nth-child(5) { padding-bottom: 16px; } /* Policies */
+
+	/* Template / Blog */
+	body.blog main > :nth-child(3) { padding-top: 52px; padding-bottom: 50px; } /* Speak to us */
+
+	/* Template / Category */
+	body.category main > :nth-child(3) { padding-top: 52px; padding-bottom: 50px; } /* Speak to us */
+
+	/* Template / Search Results */
+	body.search main > :nth-child(3) { padding-top: 52px; padding-bottom: 50px; } /* Speak to us */
+
+	/* Template / Single Post – Wide */
+	body.single-post main > :nth-child(3) { padding-top: 48px; } /* Related articles */
+	body.single-post main > :nth-child(4) { padding-top: 52px; padding-bottom: 50px; } /* Speak to us */
+}
+

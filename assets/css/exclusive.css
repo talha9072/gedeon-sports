@@ -223,7 +223,7 @@
 		line-height: 26px;
 	}
 
-	.gs-track-how .gs-process.gs-grid {
+	.gs-process-section .gs-process.gs-grid {
 		grid-template-columns: minmax(0, 1fr);
 		gap: 16px;
 	}
@@ -252,5 +252,99 @@
 	.gs-hero--right .gs-hero__buttons .wp-block-button,
 	.gs-hero--right .gs-hero__buttons .wp-block-button__link {
 		width: 100%;
+	}
+}
+
+/* Page Hero / Mobile & Tablet – Photo first: 413px (tablet) / 262px (mobile) photo, then the copy. */
+@media (max-width: 1199px) {
+	.gs-hero--right .gs-hero__media {
+		height: 262px;
+	}
+
+	.gs-hero--right .gs-hero__tag {
+		right: 17px;
+		bottom: 36px;
+	}
+
+	.gs-hero--right .gs-hero__copy {
+		padding: 36px 0 64px;
+	}
+
+	.gs-hero--right .gs-hero__title {
+		margin-top: 15px;
+		font-size: 39px;
+		line-height: 38px;
+	}
+
+	.gs-hero--right .gs-hero__text {
+		max-width: none;
+		margin-top: 18px;
+		font-size: 16px;
+		line-height: 26px;
+	}
+
+	.gs-hero--right .gs-hero__buttons {
+		gap: 12px;
+		margin-top: 28px;
+	}
+}
+
+/* "Transport and accommodation for guests" sits in a 273px column at every size in the design. */
+.gs-list.gs-included li:last-child {
+	max-width: 273px;
+}
+
+/* Tablet and mobile: copy over photo splits use the 704×452 / 358×230 photo with a 34px gap;
+ * Discretion keeps its 80px lead-in above the copy. */
+@media (max-width: 1199px) {
+	.gs-racing .gs-container {
+		gap: 34px;
+	}
+
+	.gs-racing .gs-photo .gs-photo__image img {
+		aspect-ratio: 704 / 452;
+	}
+
+	.gs-discretion .gs-split__copy {
+		padding-top: 80px;
+	}
+}
+
+/* Mobile card stacks: 16px between cards; Concierge cards have 32px under the text and the grid
+ * sits 70px under the heading. */
+@media (max-width: 767px) {
+	.gs-services.gs-grid,
+	.gs-regions.gs-grid,
+	.gs-benefits.gs-grid,
+	.gs-care.gs-grid {
+		gap: 16px;
+	}
+
+	.gs-care.gs-grid {
+		margin-top: 70px;
+	}
+
+	.gs-care .gs-card--image .gs-card__body {
+		padding-bottom: 32px;
+	}
+}
+
+@media (max-width: 1199px) {
+	.gs-racing .gs-split__lead {
+		font-size: 16px;
+		line-height: 26px;
+	}
+}
+
+/* Concierge care grid sits 70px under its heading on tablet as well. */
+@media (max-width: 1199px) {
+	.gs-care.gs-grid {
+		margin-top: 70px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+	.gs-hero--right .gs-hero__media {
+		height: 413px;
 	}
 }

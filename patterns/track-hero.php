@@ -11,7 +11,7 @@
 
 echo gedeon_sports_hero_image( // phpcs:ignore WordPress.Security.EscapeOutput -- block markup.
     'Gedeon Track &amp; Events',
-    'Supercar days,<br class="gs-br"> planned to<br class="gs-br"> the last detail',
+    'Supercar days,<br> planned to<br> the last detail',
     'Corporate track days, client hospitality, launches and supercar tours. We find the venue, provide the cars and instructors, and run the day, so you and your guests only have to drive.',
     array(
         array('Plan an event', gedeon_sports_url('contact')),

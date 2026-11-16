@@ -34,7 +34,7 @@ foreach ($gedeon_sports_tiers as $gedeon_sports_tier) {
 
 $gedeon_sports_inner = gedeon_sports_section_heading(
     'Packages',
-    'Four levels of partnership',
+    'Four levels<br class="gs-br-m"> of partnership',
     'Every package is tailored to your objectives, and to the rights approved by the athlete,<br class="gs-br"> family, team and series.'
 )
     . gedeon_sports_block_group('gs-grid gs-grid--4 gs-tiers', $gedeon_sports_cards);

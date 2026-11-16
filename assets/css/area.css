@@ -359,14 +359,83 @@
 @media (max-width: 767px) {
 	.gs-stepper {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
-		row-gap: 16px;
 	}
 
 	.gs-form__fields {
 		grid-template-columns: minmax(0, 1fr);
 	}
 
-	.gs-form .gs-form__submit button {
-		width: 100%;
+}
+
+/* Server-side validation message above a form. */
+.gs-form .gs-form__error {
+	margin: 0 0 22px;
+	padding: 14px 18px;
+	border: 1px solid var(--gs-red-border, rgba(213, 31, 53, 0.3));
+	border-left: 3px solid var(--gs-red);
+	border-radius: 4px;
+	background: rgba(213, 31, 53, 0.08);
+	font-size: 15.4px;
+	line-height: 24px;
+	color: var(--gs-text);
+}
+
+/* Tablet and mobile Investor Area (Figma 186:7459 / 162:1042 / 162:1086): the status sits inside the hero,
+ * the form keeps its 44px padding with stacked fields, and the locked preview is 1415px tall. */
+@media (max-width: 1199px) {
+	.gs-hero-mark--area.gs-hero-mark {
+		padding-bottom: 0;
+	}
+
+	.gs-hero-mark--area .gs-hero-mark__title {
+		margin-top: 15px;
+	}
+
+	.gs-status-bar {
+		padding: 24px 0 46px;
+	}
+
+	.gs-access.gs-section {
+		padding: 48px 0 36px;
+	}
+
+	.gs-stepper {
+		gap: 8px 0;
+	}
+
+	.gs-stepper__step {
+		padding-top: 12px;
+		line-height: 24px;
+	}
+
+	.gs-form-card {
+		margin-top: 28px;
+		padding: 44px;
+	}
+
+	.gs-form--access .gs-form__fields {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 16px;
+	}
+
+	.gs-form--access .gs-form__fields > :nth-child(3),
+	.gs-form--access .gs-form__fields > :nth-child(5) {
+		margin-top: 6px;
+	}
+
+	.gs-locked-section.gs-section {
+		height: 1415px;
+		padding-top: 48px;
+	}
+}
+
+/* The hero glow (Figma: 217 × 185 at 22, 315 of the 408px hero) carries on behind the status bar. */
+@media (max-width: 1199px) {
+	.gs-hero-mark--area.gs-hero-mark {
+		background: radial-gradient(217px 185px at 22px 315px, rgba(115, 13, 26, 0.5) 0%, rgba(115, 13, 26, 0) 100%), var(--gs-page);
+	}
+
+	.gs-status-bar {
+		background: radial-gradient(217px 185px at 22px 28px, rgba(115, 13, 26, 0.5) 0%, rgba(115, 13, 26, 0) 100%), var(--gs-page);
 	}
 }

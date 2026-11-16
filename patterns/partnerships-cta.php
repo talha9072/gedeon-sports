@@ -10,7 +10,7 @@
  */
 
 echo gedeon_sports_cta_band( // phpcs:ignore WordPress.Security.EscapeOutput -- block markup.
-    'Start a partnership<br class="gs-br"> conversation',
+    'Start a partnership<br> conversation',
     'Tell us about your brand and what you want to achieve.',
     array(
         array('Partnership enquiry', gedeon_sports_url('contact')),

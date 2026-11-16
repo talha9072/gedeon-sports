@@ -348,3 +348,68 @@
 		width: 100%;
 	}
 }
+
+/* Page Hero / Mobile & Tablet – Photo card – variant 2 (tablet and mobile). Shared rules live in approach.css. */
+@media (max-width: 1199px) {
+	/* Partnerships: note, full-width buttons, a 198px photo 36px below. */
+	.gs-hero-split--partnerships.gs-hero-mark {
+		padding: 71px 0 47px;
+		background: radial-gradient(55.56% 45.45% at 5.56% 77.27%, rgba(115, 13, 26, 0.5) 0%, rgba(115, 13, 26, 0) 100%), var(--gs-page);
+	}
+
+	.gs-hero-split--partnerships .gs-hero-split__note {
+		margin-top: 14px;
+	}
+
+	.gs-hero-split--partnerships .gs-hero-mark__buttons {
+		gap: 12px;
+		margin-top: 28px;
+	}
+
+	.gs-hero-split--partnerships .gs-hero-split__media {
+		margin-top: 36px;
+	}
+
+	.gs-hero-split--partnerships .gs-hero-split__media img {
+		height: 198px;
+	}
+}
+
+/* Packages — mobile tier cards, from the Figma 05 Mobile frame. */
+@media (max-width: 767px) {
+	.gs-tier {
+		padding: 28px;
+	}
+}
+
+/* Measurement and Impact — tablet and mobile, from the Figma 04 Tablet and 05 Mobile frames. */
+@media (max-width: 1199px) {
+	.gs-page-partnerships .gs-measure .gs-container,
+	.gs-page-partnerships .gs-impact .gs-container {
+		gap: 34px;
+	}
+
+	.gs-page-partnerships .gs-measure .gs-list {
+		gap: 12px;
+	}
+
+	.gs-page-partnerships .gs-impact .gs-split__lead {
+		font-size: 16px;
+		line-height: 26px;
+	}
+
+	.gs-mix--single .gs-mix__row {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 6px;
+	}
+
+	.gs-mix--single .gs-mix__year {
+		flex: none;
+	}
+
+	.gs-mix--single .gs-mix__bar {
+		flex: none;
+		height: 31px;
+	}
+}

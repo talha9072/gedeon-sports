@@ -12,7 +12,7 @@
 	padding-top: 115px;
 }
 
-.gs-hero-mark .gs-hero-mark__buttons {
+.gs-hero-mark--about .gs-hero-mark__buttons {
 	margin-top: 36px;
 }
 
@@ -69,8 +69,10 @@
 	padding: 120px 0 115px;
 }
 
-.gs-about-group .gs-split__copy {
-	flex-basis: 526px;
+@media (min-width: 1200px) {
+	.gs-about-group .gs-split__copy {
+		flex-basis: 526px;
+	}
 }
 
 .gs-about-group .gs-split__body {
@@ -308,8 +310,13 @@
 }
 
 .gs-contact-section .gs-split__copy {
-	flex-basis: 590px;
 	padding-top: 8px;
+}
+
+@media (min-width: 1200px) {
+	.gs-contact-section .gs-split__copy {
+		flex-basis: 590px;
+	}
 }
 
 .gs-contact-section .gs-contact__note {
@@ -536,9 +543,6 @@
 		gap: 34px;
 	}
 
-	.gs-contact-section .gs-split__copy {
-		padding-top: 0;
-	}
 
 	.gs-contact__panel {
 		height: 260px;
@@ -699,5 +703,156 @@
 	.gs-notice .gs-notice__text {
 		font-size: 17px;
 		line-height: 28px;
+	}
+}
+
+/* ===========================================================================
+ * About & Contact — mobile, from the Figma 05 Mobile frame.
+ * ======================================================================== */
+
+@media (max-width: 767px) {
+	/* Card / Team (Size=Mobile): 317px photo. */
+	.gs-leadership .gs-card--team .gs-card__portrait {
+		height: 317px;
+		aspect-ratio: auto;
+	}
+
+	.gs-leadership-section .gs-advisors__title {
+		margin-top: 34px;
+	}
+
+	/* Group diagram: no connectors, the five companies wrap 4 + 1, the stakes stack. */
+	.gs-about-group .gs-container {
+		gap: 16px;
+	}
+
+	.gs-tree-wrap {
+		padding: 0;
+	}
+
+	.gs-tree .gs-tree__line {
+		display: none;
+	}
+
+	.gs-tree .gs-tree__row {
+		gap: 10px 8px;
+		margin-top: 24px;
+		padding: 0 30px;
+	}
+
+	.gs-tree .gs-tree__node {
+		padding: 9px 14px;
+	}
+
+	.gs-tree .gs-tree__caption {
+		margin-top: 24px;
+	}
+
+	.gs-tree .gs-tree__row--stakes {
+		flex-direction: column;
+		align-items: center;
+		gap: 16px;
+		margin-top: 24px;
+		padding-top: 12px;
+	}
+
+	.gs-tree .gs-tree__stake {
+		box-sizing: border-box;
+		width: 215px;
+	}
+
+	/* Company details: 120px labels, no rules between rows. */
+	.gs-company-section .gs-container {
+		gap: 34px;
+	}
+
+	.gs-details .gs-facts .gs-facts__row {
+		grid-template-columns: 120px minmax(0, 1fr);
+		column-gap: 12px;
+		align-items: center;
+	}
+
+	.gs-details .gs-facts .gs-facts__row > * {
+		padding: 0;
+		border-top: 0;
+	}
+
+	/* Contact: full logo panel, form keeps its desktop padding, one column of options and fields. */
+	.gs-contact__panel {
+		height: 310px;
+	}
+
+	.gs-contact__panel .gs-contact__logo img {
+		width: 335px;
+		max-width: 100%;
+	}
+
+	.gs-contact__form {
+		padding: 34px 32px 42px;
+	}
+
+	.gs-choices {
+		gap: 10px;
+	}
+
+	.gs-form .gs-field .gs-choice {
+		height: 53px;
+	}
+
+	.gs-form--contact .gs-form__fields {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 16px;
+	}
+
+	.gs-form--contact .gs-form__submit button {
+		width: auto;
+	}
+}
+
+@media (max-width: 767px) {
+	.gs-contact-section .gs-split__lead {
+		font-size: 16px;
+		line-height: 26px;
+	}
+}
+
+/* Tablet About (Figma 177:3831 / 177:3929 / 177:3970) follows the mobile layouts: group diagram 16px
+ * under the copy, company details with 120px labels, a 310px logo panel and single-column form fields. */
+@media (min-width: 768px) and (max-width: 1199px) {
+	.gs-about-group .gs-container {
+		gap: 16px;
+	}
+
+	.gs-company-section .gs-container {
+		gap: 34px;
+	}
+
+	.gs-details .gs-facts .gs-facts__row {
+		grid-template-columns: 120px minmax(0, 1fr);
+		column-gap: 12px;
+		align-items: center;
+	}
+
+	.gs-details .gs-facts .gs-facts__row > * {
+		padding: 0;
+		border-top: 0;
+	}
+
+	.gs-contact__panel {
+		height: 310px;
+	}
+
+	.gs-contact__form {
+		padding: 34px 32px 42px;
+	}
+
+	.gs-form--contact .gs-form__fields {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 16px;
+	}
+
+	.gs-contact-section .gs-split__lead {
+		font-size: 16px;
+		line-height: 26px;
 	}
 }

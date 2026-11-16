@@ -67,6 +67,17 @@ body {
 	display: none;
 }
 
+/* Line break only on phones (below 768px). */
+.gs-br-s {
+	display: none;
+}
+
+@media (max-width: 767px) {
+	.gs-br-s {
+		display: inline;
+	}
+}
+
 :where(a, .wp-element-button, summary, button, input, select, textarea):focus-visible {
 	outline: 2px solid var(--gs-red-accent);
 	outline-offset: 3px;
@@ -538,7 +549,7 @@ body {
 	color: #fff;
 }
 
-.gs-header .gs-header__nav .current-menu-item > .wp-block-navigation-item__content::after,
+.gs-header .gs-header__nav .wp-block-navigation__container > .current-menu-item > .wp-block-navigation-item__content::after,
 .gs-header .gs-header__nav .wp-block-navigation__container > .wp-block-navigation-item > [aria-current="page"]::after {
 	opacity: 1;
 }
@@ -907,6 +918,7 @@ body {
 
 	.gs-footer .gs-footer__links {
 		gap: 15px;
+		margin-top: 15px;
 	}
 
 	.gs-footer .gs-footer__legal {
@@ -964,4 +976,10 @@ body {
 		max-width: 150px;
 	}
 
+}
+
+/* The current page inside the Exclusive submenu (dropdown and mobile overlay). */
+.gs-header .gs-header__nav .wp-block-navigation__submenu-container .wp-block-navigation-item__content[aria-current="page"],
+.gs-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container .wp-block-navigation-item__content[aria-current="page"] {
+	color: #fff;
 }

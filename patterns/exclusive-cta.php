@@ -10,7 +10,7 @@
  */
 
 echo gedeon_sports_cta_band( // phpcs:ignore WordPress.Security.EscapeOutput -- block markup.
-    'Tell us what you<br class="gs-br"> have in mind',
+    'Tell us what you<br> have in mind',
     'Events, cars or club membership: one conversation covers all three.',
     array(
         array('Make an enquiry', gedeon_sports_url('contact')),

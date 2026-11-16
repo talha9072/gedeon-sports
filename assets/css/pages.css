@@ -152,12 +152,14 @@
 }
 
 .gs-filters.gs-buttons {
+	align-items: flex-start;
 	gap: 8px;
 	margin-top: 88px;
 }
 
+/* Filter Pill: default 38px with its outline, active 36px white pill. */
 .gs-buttons .gs-btn--filter .wp-block-button__link {
-	padding: 7px 15px;
+	padding: 8px 16px;
 	border: 1px solid var(--gs-white-28);
 	background: transparent;
 	font-size: 15px;
@@ -170,7 +172,7 @@
 }
 
 .gs-buttons .gs-btn--filter.is-active .wp-block-button__link {
-	border-color: #fff;
+	border: 0;
 	background: #fff;
 	color: var(--gs-page);
 }
@@ -387,7 +389,7 @@
 }
 
 .gs-chip {
-	padding: 6px 11px;
+	padding: 7px 12px;
 	border: 1px solid var(--gs-border);
 	border-radius: 999px;
 	background: var(--gs-raised);
@@ -454,7 +456,7 @@
 }
 
 .gs-record td {
-	height: 55px;
+	height: 54px; /* + 1px top border = 55px rows */
 	border-top: 1px solid var(--gs-border);
 	font-size: 15.2px;
 	line-height: 23px;
@@ -789,4 +791,229 @@
 	.gs-split .gs-split__button .wp-block-button__link {
 		width: 100%;
 	}
+}
+
+/* Future athletes — tablet and mobile, from the Figma 04 Tablet and 05 Mobile frames. */
+@media (max-width: 1199px) {
+	.gs-future .gs-container {
+		gap: 0;
+	}
+
+	.gs-future .gs-criteria.gs-grid {
+		gap: 16px;
+	}
+
+	.gs-future .gs-split__lead {
+		margin-top: 22px;
+	}
+
+	.gs-future .gs-split__text {
+		margin-top: 13px;
+	}
+
+	.gs-future .gs-criteria .gs-card--text {
+		padding: 19px 24px 23px 32px;
+	}
+
+	.gs-future .gs-split__button {
+		margin-top: 19px;
+	}
+}
+
+/* Athlete profile — mobile, from the Figma 05 Mobile frame (Profile / Vito Ćoza (expanded)). */
+@media (max-width: 767px) {
+	.gs-profiles .gs-profile {
+		margin-top: 34px;
+	}
+
+	.gs-profile > summary {
+		align-items: center;
+		gap: 0;
+		padding: 12px 20px 8px;
+	}
+
+	.gs-profile .gs-profile__id {
+		flex: 1 1 0;
+		min-width: 0;
+		margin-left: 20px;
+		column-gap: 12px;
+	}
+
+	.gs-profile .gs-profile__avatar {
+		flex-basis: 52px;
+		width: 52px;
+		height: 52px;
+	}
+
+	.gs-profile .gs-profile__name {
+		font-size: 27.5px;
+		line-height: 29px;
+	}
+
+	.gs-profile .gs-profile__meta {
+		margin-top: 4px;
+		font-size: 15.2px;
+		line-height: 23px;
+	}
+
+	.gs-profile .gs-profile__toggle {
+		box-sizing: border-box;
+		flex: 0 0 34px;
+		align-self: flex-start;
+		width: 34px;
+		height: 34px;
+	}
+
+	.gs-profile .gs-profile__body {
+		padding: 24px 20px 47px;
+	}
+
+	.gs-profile .gs-profile__overview {
+		gap: 55px;
+	}
+
+	.gs-profile .gs-profile__text {
+		font-size: 15.4px;
+		line-height: 24px;
+	}
+
+	.gs-profile .gs-profile__text + .gs-profile__text {
+		margin-top: 16px;
+	}
+
+	.gs-profile .gs-profile__photo {
+		margin-top: 20px;
+	}
+
+	.gs-profile .gs-profile__photo img {
+		border-radius: 6px;
+	}
+
+	.gs-profile .gs-list--check {
+		gap: 16px;
+	}
+
+	.gs-profile .gs-list--check li {
+		font-size: 15.4px;
+		line-height: 24px;
+	}
+
+	.gs-profile .gs-profile__col > .gs-profile__label:not(:first-child) {
+		margin-top: 24px;
+	}
+
+	.gs-profile .gs-profile__record {
+		margin-top: 0;
+		padding-top: 36px;
+	}
+
+	.gs-profile .gs-profile__record .gs-record {
+		margin-top: 6px;
+	}
+
+	.gs-profile .gs-profile__lower {
+		gap: 36px;
+		margin-top: 0;
+		padding-top: 56px;
+	}
+
+	.gs-profile .gs-milestones {
+		gap: 16px;
+	}
+
+	.gs-profile .gs-milestone__date {
+		font-size: 17px;
+		line-height: 28px;
+	}
+
+	.gs-profile .gs-milestone__text {
+		font-size: 15.4px;
+		line-height: 24px;
+	}
+
+	.gs-profile .gs-profile__partners {
+		max-width: 246px;
+		font-size: 15.4px;
+		line-height: 24px;
+		color: var(--gs-text);
+	}
+
+	.gs-profile .gs-profile__button {
+		margin-top: 16px;
+	}
+
+	.gs-profile .gs-profile__note {
+		margin-top: 0;
+		padding-top: 37px;
+	}
+
+	.gs-record table {
+		min-width: 520px;
+	}
+}
+
+/* Our Athletes portfolio — mobile, from the Figma 05 Mobile frame (Stage Card, Athlete Card /
+ * Vertical – variant 2, Card / Future Athlete). */
+@media (max-width: 1199px) {
+	.gs-portfolio .gs-stages,
+	.gs-portfolio .gs-heading + .gs-stages {
+		gap: 16px;
+		margin-top: 41px;
+	}
+
+	.gs-portfolio .gs-stage {
+		box-sizing: border-box;
+		height: 135px;
+		padding: 16px 19px 28px;
+	}
+
+	.gs-portfolio .gs-stages__note {
+		margin-top: 13px;
+	}
+}
+
+@media (max-width: 767px) {
+	.gs-portfolio .gs-filters.gs-buttons {
+		gap: 3px 8px;
+		margin-top: 68px;
+	}
+
+	.gs-portfolio .gs-athlete-grid.gs-grid {
+		gap: 27px;
+		margin-top: 30px;
+	}
+
+	.gs-card--athlete-v .gs-card__body {
+		padding: 24px 24px 19px;
+	}
+
+	.gs-card--athlete-v .gs-card__name {
+		margin-top: 12px;
+	}
+
+	.gs-card--athlete-v .gs-card__text {
+		margin-top: 16px;
+	}
+
+	.gs-card--athlete-v .gs-buttons {
+		margin-top: 5px;
+	}
+
+	.gs-athlete-grid .gs-card--future .gs-card__panel {
+		flex: none;
+		min-height: 0;
+		aspect-ratio: 537 / 300;
+	}
+
+	.gs-athlete-grid .gs-card--future .gs-card__body {
+		padding: 17px 24px 21px;
+	}
+}
+
+/* Shown by the stage filter when no athlete is at the chosen stage. */
+.gs-athlete-grid__empty {
+	margin-top: 24px;
+	font-size: 15.4px;
+	line-height: 24px;
+	color: var(--gs-muted);
 }

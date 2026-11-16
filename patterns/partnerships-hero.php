@@ -11,7 +11,7 @@
 
 echo gedeon_sports_hero_split( // phpcs:ignore WordPress.Security.EscapeOutput -- block markup.
     'Partnerships',
-    'Partner with<br class="gs-br"> athletes on<br class="gs-br"> the way up',
+    'Partner with<br> athletes on<br> the way up',
     'Racing creates the story, and our commercial projects carry it to your customers. Partner with Vito Ćoza for the 2027 season, or with Gedeon Sports across its growing portfolio, with objectives, rights and reporting agreed at the outset.',
     'partnerships-vito-rmc.webp',
     'Vito Ćoza with the Croatian flag at the RMC Grand Finals',

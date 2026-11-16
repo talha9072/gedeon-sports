@@ -14,6 +14,6 @@ echo gedeon_sports_cta_band( // phpcs:ignore WordPress.Security.EscapeOutput -- 
     'See where each athlete is in their programme.',
     array(
         array('Our athletes', gedeon_sports_url('athletes')),
-        array('Athlete representation enquiry', gedeon_sports_url('contact'), 'secondary'),
+        array('Athlete representation<br class="gs-br-s"> enquiry', gedeon_sports_url('contact'), 'secondary'),
     )
 );

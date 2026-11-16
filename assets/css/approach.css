@@ -206,7 +206,7 @@
 }
 
 .gs-chip--outline {
-	padding: 3px 9px;
+	padding: 4px 10px;
 	border-color: var(--gs-white-28);
 	background: transparent;
 }
@@ -310,7 +310,7 @@
 }
 
 .gs-funding .gs-funding__title {
-	margin-top: 20px;
+	margin-top: 32px;
 }
 
 .gs-funding .gs-list {
@@ -477,6 +477,7 @@
 	}
 
 	.gs-hero-split .gs-hero-mark__text {
+		max-width: none;
 		margin-top: 18px;
 	}
 
@@ -640,5 +641,136 @@
 
 	.gs-mix__seg {
 		font-size: 12px;
+	}
+}
+
+/* Page Hero / Mobile & Tablet – Photo card (Our Approach) and – variant 2 (Partnerships), tablet and
+ * mobile: copy first, then a centred 277px photo card, on a red glow from the lower left. */
+@media (max-width: 1199px) {
+	.gs-hero-split.gs-hero-mark {
+		padding: 71px 0 84px;
+		background: radial-gradient(55.56% 45.45% at 5.56% 77.27%, rgba(115, 13, 26, 0.5) 0%, rgba(115, 13, 26, 0) 100%), var(--gs-page);
+	}
+
+	.gs-hero-split.gs-hero-mark::before {
+		display: none;
+	}
+
+	.gs-hero-split > .gs-container {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.gs-hero-split .gs-hero-split__copy {
+		padding-top: 0;
+	}
+
+	.gs-hero-split .gs-hero-mark__title {
+		margin-top: 15px;
+		font-size: 39px;
+		line-height: 38px;
+	}
+
+	.gs-hero-split .gs-hero-mark__text {
+		margin-top: 18px;
+		font-size: 18px;
+		line-height: 31px;
+	}
+
+	.gs-hero-split .gs-hero-split__media {
+		align-self: center;
+		width: 277px;
+		margin: 44px 0 0;
+	}
+
+	.gs-hero-split .gs-hero-split__media img {
+		height: 210px;
+		border-radius: 8px;
+	}
+}
+
+/* Responsibilities — mobile, from the Figma 05 Mobile frame. */
+@media (max-width: 767px) {
+	.gs-responsibilities .gs-grid {
+		gap: 18px;
+	}
+
+	.gs-card--list {
+		padding: 24px 24px 39px;
+	}
+
+	.gs-card--list .gs-card__title {
+		font-size: 27.5px;
+		line-height: 29px;
+	}
+
+	.gs-card--list .gs-list {
+		gap: 8px;
+		margin-top: 12px;
+	}
+}
+
+/* Operating cycle and Welfare — mobile, from the Figma 05 Mobile frame. */
+@media (max-width: 767px) {
+	.gs-cycle.gs-grid {
+		gap: 18px;
+	}
+
+	.gs-welfare .gs-welfare__cards .gs-card {
+		padding: 20px 20px 22px;
+	}
+}
+
+/* Tablet Stage Bar (Figma 186:7014): 21/20/22 padding, 4px between name and level. */
+@media (min-width: 768px) and (max-width: 1199px) {
+	.gs-ladder__stage {
+		gap: 4px;
+		padding: 21px 20px 22px;
+	}
+}
+
+/* Tablet Programme funding (Figma 177:1024): 16/26 body, 15.4/24 budget list, 22.4/26 subheading and
+ * the funding mix with each year above its full-width bar. */
+@media (min-width: 768px) and (max-width: 1199px) {
+	.gs-funding .gs-container {
+		gap: 58px;
+	}
+
+	.gs-funding .gs-split__body {
+		font-size: 16px;
+		line-height: 26px;
+	}
+
+	.gs-funding .gs-split__title {
+		font-size: 22.4px;
+		line-height: 26px;
+	}
+
+	.gs-funding .gs-list {
+		gap: 6px;
+	}
+
+	.gs-funding .gs-list li {
+		font-size: 15.4px;
+		line-height: 24px;
+	}
+
+	.gs-funding .gs-mix {
+		padding: 24px;
+	}
+
+	.gs-funding .gs-mix__row {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 6px;
+	}
+
+	.gs-funding .gs-mix__year {
+		flex: none;
+	}
+
+	.gs-funding .gs-mix__bar {
+		flex: none;
+		height: 31px;
 	}
 }

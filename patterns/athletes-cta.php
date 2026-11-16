@@ -10,7 +10,7 @@
  */
 
 echo gedeon_sports_cta_band( // phpcs:ignore WordPress.Security.EscapeOutput -- block markup.
-    'Partner with our athletes',
+    'Partner with<br class="gs-br-m"> our athletes',
     'Sponsorship, campaigns, content and appearances with Vito Ćoza for the 2027 season.',
     array(
         array('Partnership enquiry', gedeon_sports_url('contact')),

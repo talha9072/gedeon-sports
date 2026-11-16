@@ -199,7 +199,7 @@ function gedeon_sports_post_footer_shortcode(): string
     $tags  = get_the_tags();
     $chips = '';
     foreach ($tags ?: array() as $tag) {
-        $chips .= '<a class="gs-chip" href="' . esc_url(get_tag_link($tag)) . '">' . esc_html($tag->name) . '</a>';
+        $chips .= '<a class="gs-topic" href="' . esc_url(get_tag_link($tag)) . '">' . esc_html($tag->name) . '</a>';
     }
     $posts_page = (int) get_option('page_for_posts');
 

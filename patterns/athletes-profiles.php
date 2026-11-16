@@ -95,7 +95,7 @@ $gedeon_sports_body = gedeon_sports_block_group(
             . gedeon_sports_buttons('gs-profile__button', array(array('Request the media pack', gedeon_sports_url('contact'), 'small')))
         )
     )
-    . gedeon_sports_block_p('gs-profile__small gs-profile__note', 'Vito is under 18. His family is a shareholder in his project company and approves how his name and image are used, under our <a href="' . esc_url(gedeon_sports_url('safeguarding')) . '">safeguarding policy</a>. We publish his age, never his date of birth.');
+    . gedeon_sports_block_p('gs-profile__small gs-profile__note', 'Vito is under 18. His family is a shareholder in his project company and approves how his name and image are used, under our <a href="' . esc_url(gedeon_sports_url('safeguarding')) . '">safeguarding policy</a>. We publish his age,<br class="gs-br"> never his date of birth.');
 
 $gedeon_sports_summary = '<img class="gs-profile__avatar" src="' . gedeon_sports_img('avatar-vito-coza.webp') . '" alt=""/>'
     . '<span class="gs-profile__id"><span class="gs-profile__name">Vito Ćoza</span><span class="gs-tag gs-tag--stage">Stage 2</span>'

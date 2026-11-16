@@ -711,3 +711,17 @@
 	}
 
 }
+
+/* Mobile home hero: the copy runs 4px past the container on the right (12px from the edge), as in
+ * the design, so the intro keeps its seven lines. The left edge stays on the 16px gutter. */
+@media (max-width: 767px) {
+	.gs-hero--home .gs-hero__copy {
+		margin-right: -4px;
+	}
+}
+
+@media (max-width: 767px) {
+	.gs-holding.gs-section {
+		padding-bottom: 63px;
+	}
+}

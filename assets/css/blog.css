@@ -261,14 +261,6 @@
  * ======================================================================== */
 
 @media (max-width: 767px) {
-	.gs-post-filters {
-		flex-wrap: nowrap;
-		margin-right: calc(-1 * var(--gs-gutter));
-		padding-right: var(--gs-gutter);
-		overflow-x: auto;
-		scrollbar-width: none;
-	}
-
 	.gs-posts .gs-posts__grid {
 		grid-template-columns: minmax(0, 1fr);
 		gap: 16px;
@@ -431,9 +423,21 @@
 		width: 100%;
 	}
 
-	.gs-result__text {
-		font-size: 16px;
-		line-height: 26px;
+	/* Path and link stay on one row; a long path is cut with an ellipsis. */
+	.gs-result__links {
+		flex-wrap: nowrap;
+		max-width: 100%;
+	}
+
+	.gs-result__path {
+		min-width: 0;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.gs-result__more {
+		flex: none;
 	}
 }
 
@@ -469,6 +473,10 @@
 .gs-article__content > * {
 	max-width: 780px;
 	margin: 24px 0 0;
+}
+
+.gs-article .gs-article__content > :first-child {
+	margin-top: 24px;
 }
 
 .gs-article__content > .alignwide,
@@ -552,7 +560,7 @@
 
 .gs-article__content .wp-block-quote cite {
 	display: block;
-	margin-top: 4px;
+	margin-top: 14px;
 	font-size: 13.2px;
 	font-style: normal;
 	line-height: 20px;
@@ -580,7 +588,7 @@
 	gap: 8px;
 }
 
-.gs-chip {
+.gs-topic {
 	padding: 7px 12px;
 	border: 1px solid var(--gs-border);
 	border-radius: 999px;
@@ -591,7 +599,7 @@
 	text-decoration: none;
 }
 
-.gs-chip:hover {
+.gs-topic:hover {
 	color: var(--gs-text);
 }
 
@@ -617,35 +625,42 @@
 	}
 
 	.gs-posts--related {
-		margin-top: 34px;
+		margin-top: 60px;
 	}
 
-	.gs-posts--related .gs-posts__grid li:nth-child(3) {
-		display: none;
-	}
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1199px) {
+	/* Figma 195:7163 / 195:9898: 16/26 lead, body stays 17/28, 22.4/26 subheadings, quote and its source on one run. */
 	.gs-article__content .gs-lead {
-		font-size: 18px;
-		line-height: 29px;
-	}
-
-	.gs-article__content p {
 		font-size: 16px;
 		line-height: 26px;
 	}
 
 	.gs-article__content h2,
 	.gs-article__content h3 {
-		margin-top: 36px;
-		font-size: 24px;
-		line-height: 27px;
+		font-size: 22.4px;
+		line-height: 26px;
 	}
 
-	.gs-posts--related .gs-posts__grid li:nth-child(3) {
-		display: flex;
+	.gs-article__content .wp-block-quote {
+		font-size: 16px;
+		line-height: 26px;
 	}
+
+	.gs-article__content .wp-block-quote p,
+	.gs-article__content .wp-block-quote cite {
+		display: inline;
+		margin: 0;
+		font-size: 16px;
+		line-height: 26px;
+		color: var(--gs-text);
+	}
+
+	.gs-article__content .wp-block-quote p::after {
+		content: " ";
+	}
+
 }
 
 /* ===========================================================================
@@ -741,12 +756,20 @@
 
 @media (max-width: 1199px) {
 	.gs-page-title {
-		padding: 64px 0 48px;
+		padding: 49px 0 64px;
 	}
 
 	.gs-page-title .gs-page-title__title {
-		font-size: 41px;
-		line-height: 44px;
+		font-size: 39px;
+		line-height: 38px;
+	}
+
+	/* Details: 120px label column, 12px gap, no row padding (Figma 195:7301 / 195:10036). */
+	.gs-details-list .gs-details__row {
+		grid-template-columns: 120px minmax(0, 1fr);
+		gap: 0 12px;
+		min-height: 0;
+		padding: 0;
 	}
 
 	.gs-policy.gs-section {
@@ -754,14 +777,74 @@
 	}
 }
 
-@media (max-width: 767px) {
-	.gs-details-list .gs-details__row {
-		grid-template-columns: minmax(0, 1fr);
-		gap: 2px;
+
+/* Tablet and mobile archive hero (Figma "Mark – variant 3"): 71/56 padding, 16px gaps, 16/26 text;
+ * the filter pills wrap and the posts sit 40px below them. */
+@media (max-width: 1199px) {
+	.gs-hero-mark--archive {
+		padding: 71px 0 56px;
 	}
 
-	.gs-policy__content p {
+	.gs-hero-mark--archive .gs-hero-mark__title {
+		margin-top: 16px;
+	}
+
+	.gs-hero-mark--archive .gs-hero-mark__text {
+		margin-top: 16px;
 		font-size: 16px;
 		line-height: 26px;
 	}
+
+	.gs-posts-section .gs-filters + .gs-posts,
+	.gs-posts-section .gs-filters + * .gs-posts {
+		margin-top: 40px;
+	}
+}
+
+/* Tablet and mobile post hero (Figma "Photo first – variant 2"): 16px between eyebrow, title and meta;
+ * 56px below; the photo is 413px tall on tablet and 262px on mobile. */
+@media (max-width: 1199px) {
+	.gs-hero--right.gs-hero--post .gs-hero__copy {
+		padding-top: 36px;
+	}
+
+	.gs-hero--right.gs-hero--post .gs-hero__copy {
+		padding-bottom: 56px;
+	}
+
+	.gs-hero--post .gs-hero__title,
+	.gs-hero--post .gs-hero__text {
+		margin-top: 16px;
+	}
+}
+
+
+@media (min-width: 768px) and (max-width: 1199px) {
+	.gs-hero--right.gs-hero--post .gs-hero__media {
+		height: 413px;
+	}
+}
+
+@media (max-width: 1199px) {
+	.gs-hero--post .gs-hero__title {
+		font-size: 39px;
+		line-height: 38px;
+	}
+
+	.gs-hero--post .gs-hero__text {
+		font-size: 16px;
+		line-height: 26px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+	.gs-article__content .wp-block-image img {
+		aspect-ratio: 704 / 308;
+	}
+}
+
+/* Long values (e-mail addresses) wrap inside the details column instead of widening the page. */
+.gs-details-list .gs-details__row > * {
+	min-width: 0;
+	overflow-wrap: anywhere;
 }

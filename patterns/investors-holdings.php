@@ -17,7 +17,7 @@ $gedeon_sports_sources = gedeon_sports_card_text('Management fees', 'A contracte
 $gedeon_sports_inner = gedeon_sports_block_group(
     'gs-split__copy',
     gedeon_sports_eyebrow('What the companies hold', 'red')
-    . gedeon_sports_block_h(2, 'gs-title', 'Agreements<br class="gs-br"> are the asset')
+    . gedeon_sports_block_h(2, 'gs-title', 'Agreements<br> are the asset')
     . gedeon_sports_block_p('gs-split__body', 'An <strong>athlete project company</strong> holds the athlete’s rights agreement. It covers:')
     . gedeon_sports_block_list(
         'gs-list gs-list--check gs-holdings__list',

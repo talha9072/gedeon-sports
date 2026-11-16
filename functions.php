@@ -13,12 +13,14 @@ require_once get_theme_file_path('inc/blocks.php');
 require_once get_theme_file_path('inc/sections.php');
 require_once get_theme_file_path('inc/forms.php');
 require_once get_theme_file_path('inc/blog.php');
+require_once get_theme_file_path('inc/nav.php');
+require_once get_theme_file_path('inc/setup.php');
 
 function gedeon_sports_setup(): void
 {
     add_theme_support('wp-block-styles');
     add_theme_support('editor-styles');
-    add_editor_style(array('assets/css/frontend.css', 'assets/css/home.css', 'assets/css/pages.css', 'assets/css/approach.css', 'assets/css/investors.css', 'assets/css/area.css', 'assets/css/partnerships.css', 'assets/css/exclusive.css', 'assets/css/about.css', 'assets/css/blog.css', 'assets/css/editor.css'));
+    add_editor_style(array('assets/css/frontend.css', 'assets/css/home.css', 'assets/css/pages.css', 'assets/css/approach.css', 'assets/css/investors.css', 'assets/css/area.css', 'assets/css/partnerships.css', 'assets/css/exclusive.css', 'assets/css/about.css', 'assets/css/blog.css', 'assets/css/fit.css', 'assets/css/editor.css'));
 
     register_block_pattern_category(
         'gedeon-sports-sections',
@@ -43,6 +45,7 @@ function gedeon_sports_enqueue_assets(): void
     wp_enqueue_style('gedeon-sports-exclusive', get_theme_file_uri('assets/css/exclusive.css'), array('gedeon-sports-partnerships'), $version);
     wp_enqueue_style('gedeon-sports-about', get_theme_file_uri('assets/css/about.css'), array('gedeon-sports-area', 'gedeon-sports-home'), $version);
     wp_enqueue_style('gedeon-sports-blog', get_theme_file_uri('assets/css/blog.css'), array('gedeon-sports-about'), $version);
+    wp_enqueue_style('gedeon-sports-fit', get_theme_file_uri('assets/css/fit.css'), array('gedeon-sports-blog', 'gedeon-sports-exclusive'), $version);
 
     wp_enqueue_script(
         'gedeon-sports-athlete-filter',
@@ -125,3 +128,33 @@ function gedeon_sports_url(string $page): string
 
     return home_url($paths[$page] ?? '/');
 }
+
+/**
+ * Favicons from the design (WordPress / Favicon frames). A Site Icon set under Settings › General
+ * takes over, so these only print when none is set.
+ */
+function gedeon_sports_favicons(): void
+{
+    if (has_site_icon()) {
+        return;
+    }
+    $base = get_theme_file_uri('assets/icons/site/');
+    printf('<link rel="icon" type="image/png" sizes="32x32" href="%s">' . "\n", esc_url($base . 'favicon-32x32.png'));
+    printf('<link rel="icon" type="image/png" sizes="16x16" href="%s">' . "\n", esc_url($base . 'favicon-16x16.png'));
+    printf('<link rel="apple-touch-icon" sizes="180x180" href="%s">' . "\n", esc_url($base . 'apple-touch-icon.png'));
+}
+add_action('wp_head', 'gedeon_sports_favicons', 5);
+
+/**
+ * Body class with the page slug (gs-page-{slug}), used by the per-page mobile/tablet section spacing
+ * in assets/css/fit.css.
+ */
+add_filter(
+    'body_class',
+    static function (array $classes): array {
+        if (is_singular()) {
+            $classes[] = 'gs-page-' . sanitize_html_class((string) get_post_field('post_name', get_queried_object_id()));
+        }
+        return $classes;
+    }
+);
